@@ -1,4 +1,4 @@
-angular.module('AnimalService', []).factory('Animal', ['$http', function() {
+angular.module('AnimalService', []).factory('Animal', ['$http', function($http) {
 	return {
 		get: function() {
 			return $http.get('/api/animals');

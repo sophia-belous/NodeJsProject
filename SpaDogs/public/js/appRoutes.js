@@ -8,6 +8,6 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		.when('/details', {
 			templateUrl: 'views/details.html',
 			controller: 'DetailsController'
-		})
+		});
 	$locationProvider.html5Mode(true);
 }]);

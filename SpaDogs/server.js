@@ -7,7 +7,7 @@ var app = express();
 var db = require('./config/db');
 
 var port = process.env.PORT || 8080;
-//mongoose.connect(db.url);
+mongoose.connect(db.url);
 
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));

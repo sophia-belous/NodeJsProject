@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
-var animalSchema = new Schema({ name: String, type: String });
+var Schema = mongoose.Schema;
+var animalSchema = new Schema({ name: String});
 
-var Animal = mongoose.model('Animal', animalSchema);
-var dog = new Animal({ type: 'dog' })
-module.exports = dog;
+module.exports = mongoose.model('Animal', animalSchema);
