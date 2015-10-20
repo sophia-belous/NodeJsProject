@@ -1,0 +1,17 @@
+<div>
+	<h1>Pets Page</h1>
+	<p>{{ tagline }}</p>
+	
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="animal in animals">
+				<th>{{animal.name}}</th>
+			</tr>
+		</tbody>
+	</table>
+</div>
