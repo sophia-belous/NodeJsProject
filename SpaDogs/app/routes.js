@@ -1,6 +1,6 @@
 var Animal = require('./models/animal');
 
-module.exports = function(app) {
+module.exports = function(app, passport) {
 	app.get('/api/animals', function(req, res) {
 		Animal.find(function(err, animals) {
 			if (err)
