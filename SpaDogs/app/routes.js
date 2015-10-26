@@ -1,6 +1,31 @@
 var Animal = require('./models/animal');
 
+var isAuth = function(req, res, next) {
+	if (!req.isAuthenticated())
+		res.redirect('/login');
+	else
+		next();
+};
+
 module.exports = function(app, passport) {
+	
+	app.get('/loggedin', function(req, res) {
+		res.send(req.isAuthenticated() ? req.user : '0');
+	});
+	
+	app.post('/login', passport.authenticate('login'), function(req, res) {
+		res.send(req.user);
+	});
+	
+	app.post('/signup', passport.authenticate('signup'), function(req, res) {
+		res.send(req.user);
+	});
+	
+	app.post('/logout', function(req, res) {
+		req.logOut();
+		res.send(200);
+	});
+	
 	app.get('/api/animals', function(req, res) {
 		Animal.find(function(err, animals) {
 			if (err)
@@ -9,7 +34,7 @@ module.exports = function(app, passport) {
 			res.json(animals);
 		});
 	});
-	app.post('/api/animals', function(req, res) {
+	app.post('/api/animals', isAuth, function(req, res) {
 		var animal = new Animal();
 		animal.name = req.body.name;
 		
@@ -28,7 +53,7 @@ module.exports = function(app, passport) {
 			res.json(animal);
 		});
 	});
-	app.put('/api/animals/:animal_id', function(req, res) {
+	app.put('/api/animals/:animal_id', isAuth, function(req, res) {
 		Animal.findById(req.params.animal_id, function(err, animal) {
 			if(err)
 				res.send(err);
@@ -43,7 +68,7 @@ module.exports = function(app, passport) {
 			});
 		});
 	});
-	app.delete('/api/animals/:animal_id', function(req, res) {
+	app.delete('/api/animals/:animal_id', isAuth, function(req, res) {
 		Animal.remove({
 			_id: req.params.animal_id
 		}, function(err, animal) {

@@ -2,7 +2,7 @@ angular.module('PetsCtrl', []).controller('PetsController', function($scope, Ani
 
 	$scope.tagline = 'Pets Controller for Pets Page';	
 	
-	Animal.get().success(function(res) {
+	Animal.get(function(res) {
 		$scope.animals = res;
 	});
 

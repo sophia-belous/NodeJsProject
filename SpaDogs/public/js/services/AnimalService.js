@@ -1,7 +1,7 @@
 angular.module('AnimalService', []).factory('Animal', ['$http', function($http) {
 	return {
-		get: function() {
-			return $http.get('/api/animals');
+		get: function(success) {
+			return $http.get('/api/animals').success(success);
 		},
 		
 		create: function(animalData) {

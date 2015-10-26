@@ -1,1 +1,1 @@
-angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'PetsCtrl', 'AnimalService']);
+angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'LoginCtrl', 'SignupCtrl', 'PetsCtrl', 'AdminCtrl', 'AnimalService', 'AuthService']);
