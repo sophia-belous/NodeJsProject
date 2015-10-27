@@ -2,7 +2,7 @@
 	<h1>Pets Page</h1>
 	<p>{{ tagline }}</p>
 	
-	<table class="table">
+	<table style="width: 0" class="table">
 		<thead>
 			<tr>
 				<th>Name</th>
@@ -10,7 +10,7 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat="animal in animals">
-				<th>{{animal.name}}</th>
+				<td>{{animal.name}}</td>
 			</tr>
 		</tbody>
 	</table>
