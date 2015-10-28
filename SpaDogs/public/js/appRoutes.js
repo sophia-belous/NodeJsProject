@@ -19,11 +19,19 @@ angular.module('appRoutes', []).config(function($routeProvider, $locationProvide
 			controller: 'MainController'
 		})
 		.when('/admin', {
-			templateUrl: 'views/admin.html',
+			templateUrl: 'views/admin/admin.html',
 			controller: 'AdminController',
 			resolve: {
 				loggedin: checkLoggedin
 			}
+		})
+		.when('/admin/edit/:animal_id', {
+			templateUrl: 'views/admin/edit.html',
+			controller: 'DetailsController'
+		})
+		.when('/admin/create', {
+			templateUrl: 'views/admin/create.html',
+			controller: 'CreateController'
 		})
 		.when('/login', {
 			templateUrl: 'views/login.html',

@@ -8,12 +8,16 @@ angular.module('AnimalService', []).factory('Animal', ['$http', function($http) 
 			return $http.post('/api/animals', animalData);
 		},
 		
-		update: function(id, animalData) {
-			return $http.put('/api/animals'+ id, animalData);
+		update: function(id ,animalData) {
+			return $http.put('/api/animals/' + id, animalData);
 		},
 		
 		delete: function(id) {
-			return $http.delete('/api/animals' + id);
+			return $http.delete('/api/animals/' + id);
+		},
+		
+		getOne: function(id, success) {
+			return $http.get('/api/animals/' + id).success(success);
 		}
 	}
 }]);

@@ -21,9 +21,9 @@ module.exports = function(app, passport) {
 		res.send(req.user);
 	});
 	
-	app.post('/logout', function(req, res) {
+	app.get('/logout', function(req, res) {
 		req.logOut();
-		res.send(200);
+		res.redirect('/pets');
 	});
 	
 	app.get('/api/animals', function(req, res) {

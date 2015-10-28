@@ -13,7 +13,7 @@ angular.module('AuthService', []).factory('Auth', ['$http', '$location', functio
 			});
 		},
 		logout: function() {
-			return $http.post('/logout');
+			return $http.get('/logout');
 		},
 		signup: function(userData) {
 			return $http.post('/signup', {
