@@ -13,17 +13,18 @@ module.exports = function(app, passport) {
 		res.send(req.isAuthenticated() ? req.user : '0');
 	});
 	
+	app.get('/logout', isAuth, function(req, res) {		
+		req.logOut();
+		res.redirect('/pets');
+		res.send("logged out", 401);		
+	});
+	
 	app.post('/login', passport.authenticate('login'), function(req, res) {
 		res.send(req.user);
 	});
 	
 	app.post('/signup', passport.authenticate('signup'), function(req, res) {
 		res.send(req.user);
-	});
-	
-	app.get('/logout', function(req, res) {
-		req.logOut();
-		res.redirect('/pets');
 	});
 	
 	app.get('/api/animals', function(req, res) {
