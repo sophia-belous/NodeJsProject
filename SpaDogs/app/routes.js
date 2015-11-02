@@ -1,4 +1,6 @@
 var Animal = require('./models/animal');
+/*var multer = require('multer');
+var fs = require('fs');*/
 
 var isAuth = function(req, res, next) {
 	if (!req.isAuthenticated())
@@ -27,6 +29,12 @@ module.exports = function(app, passport) {
 		res.send(req.user);
 	});
 	
+	app.post('/api/uploads', function(req, res) {
+		console.log(req.body)
+		console.log(req.files)
+		res.send('ok');
+		
+	});
 	app.get('/api/animals', function(req, res) {
 		Animal.find(function(err, animals) {
 			if (err)

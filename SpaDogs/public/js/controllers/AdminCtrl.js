@@ -62,4 +62,11 @@ adminModule.controller('CreateController', function($scope, $location, Animal) {
 		$scope.animal= {};
 		$location.path('/admin');
 	};
+	$scope.uploadPhoto = function(photoFile) {
+      Animal.uploadPhoto(photoFile).success(function (uploadResponse) {
+        console.log(uploadResponse);
+      }).error(function (error) {
+        console.log(error);
+      });
+    };
 });

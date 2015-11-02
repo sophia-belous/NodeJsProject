@@ -18,6 +18,17 @@ angular.module('AnimalService', []).factory('Animal', ['$http', function($http) 
 		
 		getOne: function(id, success) {
 			return $http.get('/api/animals/' + id).success(success);
+		},
+		uploadPhoto: function(photo) {
+			var formData = new FormData();
+			angular.forEach(photo, function(value, key) {
+				formData.append('file', value);
+			});		
+			
+			return $http.post('/api/uploads', formData, {
+				headers: {'Content-type': undefined},
+				transformRequest: angular.identity
+			});
 		}
-	}
+	};
 }]);

@@ -1,6 +1,10 @@
 <div class="container">
 	<h1>Animal details</h1>
-	<form novalidate class="form-horizontal" ng-submit="createAnimal()">
+	<form name="myForm" id="myForm" enctype="multipart/form-data" ng-submit="uploadPhoto(photoFile)">
+		<input type="file" name="photo" id="photo" file-model="photoFile" multiple>
+		<button  id="addPhoto" type="submit">Add Photo</button>
+	</form>
+	<form class="form-horizontal" ng-submit="createAnimal()">
 		<div class="control-group">
 			<label for="inputName" class="control-label">Name:</label>
 			<div class="controls">
