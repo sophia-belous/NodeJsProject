@@ -30,8 +30,18 @@ module.exports = function(app, passport) {
 	});
 	
 	app.post('/api/uploads', function(req, res) {
-		console.log(req.body)
-		console.log(req.files)
+		console.log(req.body);
+		console.log(req.files);
+		var files = [];
+		var fileKeys = Object.keys(req.files);
+
+		fileKeys.forEach(function(key) {
+    		files.push(req.files[key].path.replace(/\\/g, '/'));
+		});
+		
+		var filePathes = [];
+			
+		console.log(files);
 		res.send('ok');
 		
 	});

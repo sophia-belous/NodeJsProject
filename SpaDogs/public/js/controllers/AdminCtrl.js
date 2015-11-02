@@ -56,7 +56,9 @@ adminModule.controller('DetailsController', function($scope, $routeParams, $loca
 
 adminModule.controller('CreateController', function($scope, $location, Animal) {
 	$scope.animal = {};
-	$scope.createAnimal = function() {
+	$scope.createAnimal = function(photoFile) {
+		$scope.uploadPhoto(photoFile);
+		
 		Animal.create($scope.animal);
 		//$scope.animals.push($scope.animal);
 		$scope.animal= {};

@@ -1,11 +1,12 @@
 <div class="container">
 	<h1>Animal details</h1>
-	<form name="myForm" id="myForm" enctype="multipart/form-data" ng-submit="uploadPhoto(photoFile)">
+	<!--<form name="myForm" id="myForm" enctype="multipart/form-data" ng-submit="uploadPhoto(photoFile)">
 		<input type="file" name="photo" id="photo" file-model="photoFile" multiple>
 		<button  id="addPhoto" type="submit">Add Photo</button>
-	</form>
-	<form class="form-horizontal" ng-submit="createAnimal()">
+	</form>-->
+	<form class="form-horizontal" enctype="multipart/form-data" ng-submit="createAnimal(photoFile)">
 		<div class="control-group">
+			<input type="file" name="photo" id="photo" file-model="photoFile" multiple>
 			<label for="inputName" class="control-label">Name:</label>
 			<div class="controls">
 				<input type="text" id="inputName" ng-model="animal.name">
