@@ -1,0 +1,12 @@
+<div>
+	<h1>Details Page</h1>
+	<p>{{ tagline }}</p>
+	<p>{{ animal.name }}</p>
+	<p>{{ animal.jender }}</p>
+	<p>{{ animal.color }}</p>
+	<p>{{ animal.description }}</p>
+	<div ng-repeat="photo in animal.photos">
+		<img style="width: 20%; height: 20%;" ng-src="{{photo}}" alt="">
+	</div>
+	
+</div>

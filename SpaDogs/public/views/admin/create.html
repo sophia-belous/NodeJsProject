@@ -6,10 +6,39 @@
 	</form>-->
 	<form class="form-horizontal" enctype="multipart/form-data" ng-submit="createAnimal(photoFile)">
 		<div class="control-group">
-			<input type="file" name="photo" id="photo" file-model="photoFile" multiple>
+			<label for="photo" class="control-label">Upload photos:</label>
+			<div class="controls">
+				<input type="file" name="photo" id="photo" file-model="photoFile" multiple>
+			</div>			
+		</div>
+		<div class="control-group">			
 			<label for="inputName" class="control-label">Name:</label>
 			<div class="controls">
 				<input type="text" id="inputName" ng-model="animal.name">
+			</div>
+		</div>
+		<div class="control-group">			
+			<label for="inputJender" class="control-label">Jender:</label>
+			<div class="controls">
+				<input type="text" id="inputJender" ng-model="animal.jender">
+			</div>
+		</div>
+		<div class="control-group">			
+			<label for="inputColor" class="control-label">Color:</label>
+			<div class="controls">
+				<input type="text" id="inputColor" ng-model="animal.color">
+			</div>
+		</div>
+		<div class="control-group">			
+			<label for="inputBirthday" class="control-label">Birthday:</label>
+			<div class="controls">
+				<input type="date" id="inputBirthday" ng-model="animal.birthday">
+			</div>
+		</div>
+		<div class="control-group">			
+			<label for="inputDescription" class="control-label">Description:</label>
+			<div class="controls">
+				<textarea id="inputDescription" cols="30" rows="10" ng-model="animal.description"></textarea>
 			</div>
 		</div>
 		<div class="control-group">

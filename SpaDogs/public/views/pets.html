@@ -1,17 +1,16 @@
-<div>
+<div  class="container">
 	<h1>Pets Page</h1>
 	<p>{{ tagline }}</p>
-	
-	<table style="width: 0" class="table">
-		<thead>
-			<tr>
-				<th>Name</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="animal in animals">
-				<td>{{animal.name}}</td>
-			</tr>
-		</tbody>
-	</table>
+	<div class="row" ng-repeat="animal in animals">
+		<div class="col-md-7">
+			<a href="#">
+				<img class="img-responsive" ng-src="{{animal.photos[0]}}" alt="">
+			</a>
+		</div>
+		<div class="col-md-5">
+			<h3>Name :{{animal.name}}</h3>
+			<h4>Jender: {{animal.jender}}</h4>
+			<a class="btn btn-primary" ng-click="viewDetails(animal._id)">More<span class="glyphicon glyphicon-chevron-right"></span></a>
+		</div>
+	</div>
 </div>

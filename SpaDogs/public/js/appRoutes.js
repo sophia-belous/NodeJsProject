@@ -27,7 +27,7 @@ angular.module('appRoutes', []).config(function($routeProvider, $locationProvide
 		})
 		.when('/admin/edit/:animal_id', {
 			templateUrl: 'views/admin/edit.html',
-			controller: 'DetailsController',
+			controller: 'EditController',
 			resolve: {
 				loggedin: checkLoggedin
 			}
@@ -51,9 +51,10 @@ angular.module('appRoutes', []).config(function($routeProvider, $locationProvide
 			templateUrl: 'views/pets.html',
 			controller: 'PetsController'
 		})
-		/*.otherwise({
-            redirectTo: '/'
-        })*/;
+		.when('/pets/:animal_id', {
+			templateUrl: 'views/petDetails.html',
+			controller: 'DetailsController'
+		});
 	$locationProvider.html5Mode(true);
 	
 	$httpProvider.interceptors.push(function($q, $location) {

@@ -32,17 +32,14 @@ module.exports = function(app, passport) {
 	app.post('/api/uploads', function(req, res) {
 		console.log(req.body);
 		console.log(req.files);
-		var files = [];
+		var filePaths = [];
 		var fileKeys = Object.keys(req.files);
 
 		fileKeys.forEach(function(key) {
-    		files.push(req.files[key].path.replace(/\\/g, '/'));
-		});
-		
-		var filePathes = [];
-			
-		console.log(files);
-		res.send('ok');
+    		filePaths.push(req.files[key].path.replace(/\\/g, '/').substring(6));
+		});			
+		//console.log(files);
+		res.json(filePaths);
 		
 	});
 	app.get('/api/animals', function(req, res) {
@@ -54,8 +51,14 @@ module.exports = function(app, passport) {
 		});
 	});
 	app.post('/api/animals', isAuth, function(req, res) {
-		var animal = new Animal();
-		animal.name = req.body.name;
+		var animal = new Animal({
+			name: req.body.name,
+			jender: req.body.jender,
+			color: req.body.color,
+			birthday: req.body.birthday,
+			description: req.body.description,
+			photos: req.body.photos			
+		});
 		
 		animal.save(function(err) {
 			if (err)
@@ -78,6 +81,10 @@ module.exports = function(app, passport) {
 				res.send(err);
 			
 			animal.name = req.body.name;
+			animal.jender = req.body.jender;
+			animal.color = req.body.color;
+			animal.birthday = req.body.birthday;
+			animal.description = req.body.description;
 			
 			animal.save(function(err) {
 			if (err)

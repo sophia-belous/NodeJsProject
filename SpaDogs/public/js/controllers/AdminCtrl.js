@@ -38,7 +38,7 @@ adminModule.controller('AdminController', function($scope, Animal, $location, $w
 	};	
 });
 
-adminModule.controller('DetailsController', function($scope, $routeParams, $location, Animal) {
+adminModule.controller('EditController', function($scope, $routeParams, $location, Animal) {
 	
 	Animal.getOne($routeParams.animal_id, function(res) {
 		$scope.animal = res;		
@@ -57,18 +57,14 @@ adminModule.controller('DetailsController', function($scope, $routeParams, $loca
 adminModule.controller('CreateController', function($scope, $location, Animal) {
 	$scope.animal = {};
 	$scope.createAnimal = function(photoFile) {
-		$scope.uploadPhoto(photoFile);
-		
-		Animal.create($scope.animal);
-		//$scope.animals.push($scope.animal);
-		$scope.animal= {};
-		$location.path('/admin');
+		Animal.uploadPhoto(photoFile).success(function (uploadResponse) {
+			$scope.animal.photos = uploadResponse;
+        	console.log(uploadResponse);
+			Animal.create($scope.animal);
+			$scope.animal= {};
+			$location.path('/admin');
+      	}).error(function (error) {
+        	console.log(error);
+      	});	
 	};
-	$scope.uploadPhoto = function(photoFile) {
-      Animal.uploadPhoto(photoFile).success(function (uploadResponse) {
-        console.log(uploadResponse);
-      }).error(function (error) {
-        console.log(error);
-      });
-    };
 });
