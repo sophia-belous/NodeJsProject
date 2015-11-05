@@ -1,1 +1,28 @@
-body {}
+.navbar {
+	min-width: 100%;	
+}
+.navbar-nav {
+	float: right;
+}
+.navbar-brand {
+	color: black;
+}
+.carousel{
+	height: 100%;
+}
+.carousel .item {
+	height: 600px;
+}
+.carousel-control{
+	display: none;
+}
+.carousel .fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.page-home { background:#00D0BC; color:#00907c; }
+.page-pets { background:#E59400; color:#a55400; }
+.page-login { background:#ffa6bb; color:#9e0000; }

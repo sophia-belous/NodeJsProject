@@ -2,6 +2,8 @@ var authApp = angular.module('AuthCtrl', []);
 
 authApp.controller('LoginController', function($scope, Auth) {
 
+	$scope.pageClass = 'page-login';
+	
 	$scope.tagline = 'Login Controller for Login Page';	
 	$scope.user = {
 		username: '',
@@ -17,6 +19,8 @@ authApp.controller('LoginController', function($scope, Auth) {
 
 authApp.controller('SignupController', function($scope, Auth) {
 
+	$scope.pageClass = 'page-signup';
+	
 	$scope.tagline = 'Signup Controller for Signup Page';	
 	$scope.user = {
 		username: '',

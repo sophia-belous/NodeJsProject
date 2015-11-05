@@ -2,6 +2,8 @@ var adminModule = angular.module('AdminCtrl', []);
 
 adminModule.controller('AdminController', function($scope, Animal, $location, $window) {
 	
+	$scope.pageClass = 'page-admin';
+	
 	$scope.tagline = 'Admin Controller for Admin Page';	
 	
 	$scope.animal = {};
@@ -9,12 +11,6 @@ adminModule.controller('AdminController', function($scope, Animal, $location, $w
 	Animal.get(function(res) {
 		$scope.animals = res;
 	});
-	
-	/*$scope.createAnimal = function() {
-		Animal.create($scope.animal);
-		$scope.animals.push($scope.animal);
-		$scope.animal= {};
-	};*/
 	
 	$scope.addAnimal = function() {
 		$location.path('/admin/create');
@@ -40,6 +36,8 @@ adminModule.controller('AdminController', function($scope, Animal, $location, $w
 
 adminModule.controller('EditController', function($scope, $routeParams, $location, Animal) {
 	
+	$scope.pageClass = 'page-admin-edit';
+	
 	Animal.getOne($routeParams.animal_id, function(res) {
 		$scope.animal = res;		
 	});
@@ -55,6 +53,9 @@ adminModule.controller('EditController', function($scope, $routeParams, $locatio
 });
 
 adminModule.controller('CreateController', function($scope, $location, Animal) {
+	
+	$scope.pageClass = 'page-admin-create';
+	
 	$scope.animal = {};
 	$scope.createAnimal = function(photoFile) {
 		Animal.uploadPhoto(photoFile).success(function (uploadResponse) {
