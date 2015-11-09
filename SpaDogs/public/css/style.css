@@ -9,12 +9,28 @@
 }
 .carousel{
 	height: 100%;
+	margin-bottom: -125px;
+    overflow: hidden;
+    position: relative;
 }
 .carousel .item {
-	height: 600px;
+	height: 667px;
 }
 .carousel-control{
 	display: none;
+}
+.carousel-indicators {
+    bottom: 140px;
+}
+.carousel-indicators li {
+	width: 18px;
+    height: 18px;
+    margin: 6px;
+}
+.carousel-indicators .active {
+	width: 20px;
+    height: 20px;
+    margin: 6px;	
 }
 .carousel .fill {
     width: 100%;
@@ -23,6 +39,24 @@
     background-size: cover;
 }
 
-.page-home { background:#00D0BC; color:#00907c; }
-.page-pets { background:#E59400; color:#a55400; }
-.page-login { background:#ffa6bb; color:#9e0000; }
+.grey-bg {
+    background-color: lightgrey;
+}
+
+.page-home {}
+	.page-home .info-box { 
+		background-color: burlywood;
+		padding: 34px 26px 31px;
+	}
+	.page-home .wrapper {
+		margin-left: 70px;
+	}
+	.page-home .grid-item {
+		width: 328px;
+	}
+	.page-home .grid-item img{
+		max-width: 100%; 
+	}
+
+.page-pets {}
+.page-login {}

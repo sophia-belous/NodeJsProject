@@ -8,7 +8,7 @@ mainModule.controller('MainController', function($scope) {
 	$scope.noWrapSlides = false;
 	var slides = $scope.slides = [];
 	$scope.addSlide = function() {
-		var newWidth = 600 + slides.length + 1;
+		var newWidth = 500 + slides.length + 1;
 			slides.push({
 				image: '//placekitten.com/' + newWidth + '/300',
 				text: ['More','Extra','Lots of'][slides.length % 3] + ' ' +
