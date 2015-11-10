@@ -1,39 +1,36 @@
+<header>
+	<div id="carousel-bg">
+		<uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+			<uib-slide ng-repeat="slide in slides" active="slide.active">
+				<div class="fill" style="background-image:url(http:{{ slide.image }});"></div>
+				<div class="carousel-caption">
+					<h1>Slide {{ $index }}</h1>
+					<p>{{ slide.text }}</p>
+				</div>
+			</uib-slide>
+		</uib-carousel>
+	</div>	
+</header>
+<div id="slide1" class="slide">
+	<div class="title">
+    <h1>Slide 1</h1>
+  </div>
+</div>
 
-		<div class="info-block container">
-			<div class="wrapper row">
-				<article class="grid-item col-md-4">
-					<figure>
-						<img src="http://animalclinicofunion.com/communities/0/000/001/769/770//images/9802223.png" alt="">
-					</figure>
-					<div class="info-box">
-						<h3>Get to know everything </h3>
-						<h4>about your cat!</h4>
-						<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-						<a href="#" class="button">read More</a>
-					</div>
-				</article>
-				<article class="grid-item col-md-4">
-					<figure>
-						<img src="http://groomingdalespetboutique.com/communities/7/000/001/503/627//images/5463471.jpg" alt="">
-					</figure>
-					<div class="info-box">
-						<h3>Get to know everything </h3>
-						<h4>about your cat!</h4>
-						<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-						<a href="#" class="button">read More</a>
-					</div>
-				</article>
-				<article class="grid-item col-md-4">
-					<figure>
-						<img src="http://www.autoinsurancequotesontario.ca/wp-content/uploads/2015/08/Pet-Insurance-300x216.jpg" alt="">
-					</figure>
-					<div class="info-box">
-						<h3>Get to know everything </h3>
-						<h4>about your cat!</h4>
-						<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-						<a href="#" class="button">read More</a>
-					</div>
-				</article>
-			</div>
-		</div>
-		<div></div>
+<div id="slide2" class="slide">
+  <div class="title">
+    <h1>Slide 2</h1>
+    <p>Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per, postulant mnesarchum cu nam. Malis movet ornatus id vim, feugait detracto est ea, eam eruditi conceptam in. Ne sit explicari interesset. Labores perpetua cum at. Id viris docendi denique vim.</p>
+  </div>
+</div>
+
+<div id="slide3" class="slide">
+  <div class="title">
+    <h1>Slide 3</h1>
+    <p>Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per, postulant mnesarchum cu nam. Malis movet ornatus id vim, feugait detracto est ea, eam eruditi conceptam in. Ne sit explicari interesset. Labores perpetua cum at. Id viris docendi denique vim.</p>
+  </div>
+</div>
+
+<div id="slide4" class="slide header">
+    <h1>The End</h1>
+</div>
