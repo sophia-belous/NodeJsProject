@@ -1,29 +1,27 @@
 html {
-  height: 100%;
   overflow: hidden;
+  height: 100%;
 }
 
 body { 
   margin:0;
   padding:0;
-	perspective: 1px;
+  overflow: hidden;
+	/*perspective: 1px;
 	transform-style: preserve-3d;
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
-  font-family: Nunito;
-}
-h1 {
-   font-size: 250%
-}
-
-p {
-  font-size: 140%;
-  line-height: 150%;
-  color: #333;
+  perspective-origin: 100%;*/
+  font-family: Righteous;
 }
 .navbar {
 	min-width: 100%;	
+  min-height: 110px;
+  margin-bottom: 0;
+}
+.navbar .container {
+  padding-top: 25px;
 }
 .navbar-nav {
 	float: right;
@@ -39,11 +37,32 @@ p {
 .carousel .item {
 	height: 667px;
 }
+.carousel-caption {
+  padding-bottom: 200px;
+  color: brown;
+  width: 100%;
+  left: 0%;
+}
+.carousel-caption .h-text {
+  font-size: 52px;
+  line-height: 52px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.carousel-caption .p-text {
+  font-size: 192px;
+  line-height: 150px;
+  padding-top: 35px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
 .carousel-control{
 	display: none;
 }
 .carousel-indicators {
-    bottom: 140px;
+    bottom: 280px;
 }
 .carousel-indicators li {
 	width: 18px;
@@ -66,30 +85,117 @@ p {
     background-color: lightgrey;
 }
 
+.parallax {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 300px;  
+  -webkit-perspective-origin-x: 100%;
+}
+
+.title {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform-origin-x: 100%; 
+}
+.parallax-layer-base {
+  transform: translateZ(0);
+  z-index: 4;
+}
+.parallax-layer-back {
+  transform: translateZ(-300px) scale(2);
+  z-index: 3;
+}
+.parallax-layer-fore {
+  transform: translateZ(90px) scale(.7);
+  z-index: 1;
+}
+.parallax-layer-deep {
+  transform: translateZ(-600px) scale(3);
+  z-index: 2;
+}
+.parallax-group {
+  position: relative;
+  height: 100vh;
+  transform-style: preserve-3d;
+}
+.parallax-group#group1 {
+  z-index: 5;  
+}
+.parallax-group#group2 {
+  z-index: 3;
+  margin-bottom: 757px;
+    margin-top: -755px;
+}
+#group2 .parallax-layer-back {
+  background-image: url("http://7-themes.com/data_images/out/78/7037859-dog-retriever.jpg");
+  background-size: cover;
+}
+.parallax-group#group3 {
+  z-index: 4;
+  margin-bottom: 700px;
+  margin-top: -754px;
+}
+#group3 .parallax-layer-base {
+  background-image: url('http://www.safeoffleashdogplay.com/wp-content/uploads/2013/05/dogs.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+.parallax-group#group4 {
+  z-index: 2;  
+  margin-top: -731px;
+  margin-bottom: 765px;
+}
+#group4 .parallax-layer-deep {
+  background-image: url('https://blog-photos.dogvacay.com/blog/wp-content/uploads/2015/06/Dog3.jpeg');
+}
+.parallax-group#group5 {
+  z-index: 3;  
+  margin-bottom: 854px;
+  margin-top: -934px;
+}
+#group5 .parallax-layer-base {
+  background-image: url('https://static.pexels.com/photos/5018/animal-dog-pet-brown.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.parallax-group#group6 {
+  z-index: 2; 
+  margin-top: -960px;
+  margin-bottom: -266px;
+}
+#group6 .parallax-layer-back {
+  background-image: url('http://images6.fanpop.com/image/photos/35200000/Dog-dogs-35247719-3706-2480.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.parallax-group#group7 {
+  z-index: 3;
+  height: 753px;
+  overflow: hidden;
+}
+#group7 .parallax-layer-base {
+  background: brown;
+  margin-top: 230px;
+}
+
 .page-home {}
-	.page-home .info-box { 
-		background-color: burlywood;
-		padding: 34px 26px 31px;
-	}
-	.page-home .wrapper {
-		margin-left: 70px;
-	}
-	.page-home .grid-item {
-		width: 328px;
-	}
-	.page-home .grid-item img{
-		max-width: 100%; 
-	}
 .page-pets {}
 .page-login {}
 
-@import url(http://fonts.googleapis.com/css?family=Nunito);
-
-
-
-
-
-.slide {
+/*.slide {
   position: relative;
   padding: 25vh 10%;
   min-height: 100vh;
@@ -119,14 +225,7 @@ img {
   bottom: 0;
   left:0;
   right:0;
-}
-
-.title {
-  width: 50%;
-  padding: 5%;
-  border-radius: 5px;
-  background: rgba(240,230,220, .7);
-  box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+    transform-origin: 100%;
 }
 
 .slide:nth-child(2n) .title {
@@ -143,38 +242,26 @@ img {
   background: 50% 50% / cover;  
 }
 
-.header {
-  text-align: center;
-  font-size: 175%;
-  color: #fff;
-  text-shadow: 0 2px 2px #000;
-}
-
-#title {
-  background-image: url("http://lorempixel.com/output/abstract-q-c-640-480-6.jpg");
-   background-attachment: fixed;  
-}
-
 #slide1{
   
 }
 #slide1:before {
-  background-image: url("http://7-themes.com/data_images/out/78/7037859-dog-retriever.jpg");
+  background-image: url("/uploads/stylePhotos/dark-dog-fruits-wallpaper.jpg");
   transform: translateZ(-1px) scale(2);
   z-index:-1;
 }
 
 #slide2 {
-  background-image: url("http://spaysa.org/wp-content/uploads/2013/02/winter-dog-snowflakes-hd-wallpaper-Dog-wallpaper-HD-free-wallpapers-backgrounds-images-FHD-4k-download-2014-2015-2016.jpg");
+  background-image: url("/uploads/stylePhotos/winter-dog-snowflakes-bg.jpg");
   background-attachment: fixed;
 }
 
 #slide3:before {
-  background-image: url("http://freedwallpaper.com/wp-content/uploads/2014/05/Wallpapers-dogs-three-puppies-hd-desktop-wallpapers.jpg");
+  background-image: url("http://7-themes.com/data_images/out/78/7037859-dog-retriever.jpg");
   transform: translateZ(-1px) scale(2);
   z-index:-1;
 }
 
 #slide4 {
   background-image: url("/uploads/stylePhotos/Blurred-Background_2-800x461.jpg")
-}
+}*/
