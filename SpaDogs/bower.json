@@ -6,7 +6,6 @@
     "angular-route": "latest",
     "angular-bootstrap": "~0.14.3",
     "bootstrap": "latest",
-    "angular-animate": "~1.4.7",
-    "angular-materialize": "*"
+    "angular-animate": "~1.4.7"
   }
 }
