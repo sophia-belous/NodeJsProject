@@ -1,5 +1,5 @@
-<header id="group1" class="parallax-group">
-	<div class="parallax-layer parallax-layer-base" id="carousel-bg">
+<!--<header>
+	<div id="carousel-bg">
 		<uib-carousel interval="myInterval" no-wrap="noWrapSlides">
 			<uib-slide ng-repeat="slide in slides" active="slide.active">
 				<div class="fill" style="background-image:url(http:{{ slide.image }});"></div>
@@ -10,28 +10,47 @@
 			</uib-slide>
 		</uib-carousel>
 	</div>	
+</header>-->
+<header>
+	<div class="slider" slider id="carousel-bg">
+		<ul class="slides">
+			<li ng-repeat="slide in slides">
+				<img ng-src="http:{{ slide.image }}" alt="">
+				<div class="caption center-align">
+                <h3 class="h3-text red-text text-accent-4">{{ slide.text }}</h3>
+                <h5 class="h5-text red-text text-accent-4">Slide {{ $index }}</h5>
+            </div>
+			</li>
+			
+		</ul>
+	</div>	
 </header>
-<div id="group2" class="parallax-group">
-	<div class="parallax-layer parallax-layer-base"><div class="title">Base Layer</div></div>
-	<div class="parallax-layer parallax-layer-back"><div class="title">Background Layer</div></div>
+<div class="parallax-container">
+	<h4 class="h3-text center-align white-text">Gallary</h4>
+	<h5 class="h5-text center-align white-text">of our dogs</h5>
+    <div parallax><img src="/uploads/stylePhotos/dark-dog-fruits-wallpaper.jpg"></div>
 </div>
-<div id="group3" class="parallax-group">
-	<div class="parallax-layer parallax-layer-fore"><div class="title">Foreground Layer</div></div>
-	<div class="parallax-layer parallax-layer-base"><div class="title">Base Layer</div></div>
+<div class="container">
+	<p>some content</p>
+	<p>some content</p>
+	<p>some content</p>
+	<p>some content</p>
+	<p>some content</p>
+	<p>some content</p>
+	<p>some content</p>
+	<p>some content</p>
+	<p>some content</p>
+	<p>some content</p>
+	<p>some content</p>
+	<p>some content</p>
 </div>
-<div id="group4" class="parallax-group">
-	<div class="parallax-layer parallax-layer-base"><div class="title">Base Layer</div></div>
-	<div class="parallax-layer parallax-layer-back"><div class="title">Background Layer</div></div>
-	<div class="parallax-layer parallax-layer-deep"><div class="title">Deep Background Layer</div></div>
+<div class="parallax-container">
+    <div parallax><img src="http://www.safeoffleashdogplay.com/wp-content/uploads/2013/05/dogs.jpg"></div>
 </div>
-<div id="group5" class="parallax-group">
-	<div class="parallax-layer parallax-layer-fore"><div class="title">Foreground Layer</div></div>
-	<div class="parallax-layer parallax-layer-base"><div class="title">Base Layer</div></div>
-</div>
-<div id="group6" class="parallax-group">
-	<div class="parallax-layer parallax-layer-back"><div class="title">Background Layer</div></div>
-	<div class="parallax-layer parallax-layer-base"><div class="title">Base Layer</div></div>	
-</div>
-<div id="group7" class="parallax-group">
-	<div class="parallax-layer parallax-layer-base"><div class="title">Base Layer</div></div>	
+<div class="container">
+	<p>some content</p>
+	<p>some content</p>
+	<p>some content</p>
+	<p>some content</p>
+	<p>some content</p>
 </div>
