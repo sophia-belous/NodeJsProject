@@ -1,1 +1,1 @@
-angular.module('sampleApp', ['ngRoute', 'ngAnimate', 'ui.materialize', 'appRoutes', 'ui.bootstrap', 'MainCtrl', 'AuthCtrl', 'AdminCtrl', 'AnimalService', 'AuthService', 'file-model']);
+angular.module('sampleApp', ['ngRoute', 'ngAnimate', 'ui.materialize', 'appDirectives', 'appRoutes', 'ui.bootstrap', 'MainCtrl', 'AuthCtrl', 'AdminCtrl', 'AnimalService', 'AuthService', 'file-model']);

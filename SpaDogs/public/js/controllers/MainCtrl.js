@@ -7,9 +7,9 @@ mainModule.controller('MainController', function($scope) {
 	$scope.myInterval = 5000;
 	$scope.noWrapSlides = false;
 	$scope.slides = [
-		{image:'/uploads/stylePhotos/1440x900_High_resolution_puppy_photograph_406345.jpg', text: 'More Cats'},
-		{image:'/uploads/stylePhotos/white-dog-white-background.jpg', text: 'Extra Kittys'},
-		{image:'/uploads/stylePhotos/Black-Dogs-Puppies-Wallpaper-HD.jpg', text: 'Lots of Felines'}
+		{image:'/uploads/stylePhotos/weimaraner-puppies-adoption-41.jpg', textBig: 'Creatures!', textSmall: 'The Most Gracious'},
+		{image:'/uploads/stylePhotos/26fcbf8c1ba1a263753e20ffd83f0451.jpg', textBig: 'Companion!', textSmall: 'Find Your Best Friend'},
+		{image:'/uploads/stylePhotos/silver-labrador-puppy.jpg', textBig: 'Your Dog!', textSmall: 'Get To Know Everything About'}
 	];
 });
 

@@ -4,9 +4,9 @@
 	<meta charset="UTF-8">
 	<base href="/">
 	<link rel="stylesheet" href="libs/materialize/dist/css/materialize.min.css">
-	
-	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Righteous" />
+	<link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -25,13 +25,15 @@
 	<script src="js/services/AnimalService.js"></script>
 	<script src="js/services/AuthService.js"></script>
 	<script src="js/appRoutes.js"></script>
+	<script src="js/appDirectives.js"></script>
 	<script src="js/app.js"></script>
 </head>
 <body ng-app="sampleApp" ng-controller="MainController">
-	<div class="navbar-fixed">
+	<div data-my-nav-scroll ng-class="{'navbar-fixed':boolChangeClass}">
 		<nav>
 			<div class="nav-wrapper container">
-				<a href="/" class="brand-logo">Labs</a>
+				<a href="/" class="brand-logo">
+				<img src="http://kevinmroy.com/wp-content/uploads/Pet-Envy.png" alt="">Labs</a>
 				<a class='button-collapse dropdown-button right' href='javascript:void(0);' data-activates='demoDropdown' dropdown data-hover="true">
     <i class="material-icons">menu</i></a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -48,7 +50,7 @@
 		</nav>
 	</div>
 	
-	<section class="content">
+	<section  data-my-nav-scroll class="content" ng-class="{'for-nav':boolChangeClass}">
 		<div class="page {{ pageClass }}" ng-view></div>		
 	</section>	
 </body>
