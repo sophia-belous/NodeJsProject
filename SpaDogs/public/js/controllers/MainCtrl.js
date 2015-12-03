@@ -2,6 +2,8 @@ var mainModule = angular.module('MainCtrl', [])
 
 mainModule.controller('MainController', function($scope) {
 	
+	
+	
 	$scope.pageClass = 'page-home';
 	
 	$scope.myInterval = 5000;

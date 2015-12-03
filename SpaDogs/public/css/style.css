@@ -13,16 +13,17 @@ nav {
 }
 nav .container {
   width: 85%;
+  z-index: 3;
 }
 .brand-logo img {
   width: 10%;
 }
 section.content {
-  margin-top: -300px;
+  margin-top: -230px;
 }
 
 section.content.for-nav {
-  margin-top: -150px;
+  margin-top: -70px;
 }
 .gallary-block .btn {
   padding: 0;
@@ -77,7 +78,7 @@ section.content.for-nav {
   display: block;
   left: 100%;
   position: absolute;
-  right: -28.35em;;
+  right: -28.39em;;
   top: 20px;
 }
 .region-after {
@@ -104,16 +105,15 @@ section.content.for-nav {
 }
 
 #carousel-bg {
-  height: 950px !important;
+  height: 900px !important;
   box-shadow: 0 8px 3px -7px #2B2B2B;
-  z-index: -1;
+ 
 }
 #carousel-bg .slides {
-  height: 950px !important;
+  height: 900px !important;
 }
 #carousel-bg button{
   position: absolute;
-  z-index: 2;
   margin-top: -200px;
   margin-left: 470px;
   width: 25%;
@@ -131,7 +131,7 @@ section.content.for-nav {
 #carousel-bg .caption {
   left: 0%;
   width: 100%;
-  top: 30%;
+  top: 35%;
 }
 .slider .indicators {
   z-index: 2;
@@ -192,7 +192,26 @@ section.content.for-nav {
   width: 1265px;
   height: auto;
 }
+.page {
+  position: static;
+}
+
 
 .page-home {}
+
 .page-pets {}
+.page-pets .content-block {
+  padding-bottom: 40px;
+  padding-top: 40px;
+  height: initial; 
+}
+.page-pets .content-block img{
+  width: 100%; 
+}
+.page-pets .row.container {
+  width: 90%;
+}
+.page-pets .animal-col {
+  margin-bottom: 30px;
+}
 .page-login {}
