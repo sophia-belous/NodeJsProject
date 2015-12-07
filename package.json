@@ -2,7 +2,8 @@
   "name": "SpaDogs",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "bower install"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
