@@ -1,0 +1,38 @@
+<div class="parallax-container">
+    <div parallax><img src="/uploads/stylePhotos/weimaraner-puppies-adoption-41.jpg"></div>
+</div>
+<div>	
+	<!--<div ng-show="show">
+		<form ng-submit="createAnimal()">
+			<input type="text" ng-model="animal.name">
+			<button type="submit" class="btn btn-primary">Create</button>
+		</form>
+	</div>
+	<div ng-show="showUpdate">
+		<form ng-submit="updateAnimal(data)">
+			<input type="text" ng-model="animal.name">
+			<button type="submit" class="btn btn-primary">Update</button>
+		</form>
+	</div> -->
+	
+	<table style="width:0" class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th></th>
+				<th><button ng-click="show = !show">+</button></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="animal in animals">
+				<td>{{animal.name}}</td>
+				<td><a ng-click="editAnimal(animal._id)" class="btn btn-small btn-primary">edit</a></td>
+				<td><a ng-click="removeAnimal(animal._id)" class="btn btn-small btn-danger">delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+	<a ng-click="addAnimal()" class="btn btn-info btn-small">Create New Dog</a>
+</div>
+<div class="parallax-container">
+    <div parallax><img src="/uploads/stylePhotos/weimaraner-puppies-adoption-41.jpg"></div>
+</div>

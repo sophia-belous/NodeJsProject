@@ -1,0 +1,12 @@
+{
+  "name": "angular",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-bootstrap": "~0.14.3",
+    "bootstrap": "latest",
+    "angular-animate": "~1.4.7",
+    "angular-materialize": "*"
+  }
+}

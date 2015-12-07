@@ -191,3 +191,21 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log
+node_modules
+
+public/libs
