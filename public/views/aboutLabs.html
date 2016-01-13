@@ -1,0 +1,25 @@
+<div class="parallax-container">
+    <div parallax><img src="/uploads/stylePhotos/weimaraner-puppies-adoption-41.jpg"></div>
+</div>
+<div class="content-block">
+	<div class="region-before"></div>
+	<div class="row container">
+		<div ng-repeat="article in articles" class="animal-col col">
+			<div>
+				<a href="#">
+					<img class="img-responsive" ng-src="{{article.photo}}" alt="">
+				</a>
+			</div>
+			<div>
+				<h5>Title :{{article.title}}</h5>
+				<h6>Description: {{article.shortDesc}}</h6>
+				<!--<a class="btn btn-primary" ng-click="viewDetails(article._id)">More<span class="glyphicon glyphicon-chevron-right"></span></a>-->
+				<a class="btn btn-primary" ng-click="viewDetails(1)">More<span class="glyphicon glyphicon-chevron-right"></span></a>
+			</div>
+		</div>
+	</div>
+	<div class="region-after"></div>	
+</div>
+<div class="parallax-container">
+    <div parallax><img src="/uploads/stylePhotos/dog-425067_1920.jpg"></div>
+</div>

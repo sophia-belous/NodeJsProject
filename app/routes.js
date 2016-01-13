@@ -38,7 +38,7 @@ module.exports = function(app, passport) {
 		fileKeys.forEach(function(key) {
     		filePaths.push(req.files[key].path.replace(/\\/g, '/').substring(6));
 		});			
-		//console.log(files);
+
 		res.json(filePaths);
 		
 	});

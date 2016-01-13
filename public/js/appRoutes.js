@@ -54,6 +54,14 @@ angular.module('appRoutes', []).config(function($routeProvider, $locationProvide
 		.when('/pets/:animal_id', {
 			templateUrl: 'views/petDetails.html',
 			controller: 'DetailsController'
+		})
+		.when('/about-labs', {
+			templateUrl: 'views/aboutLabs.html',
+			controller: 'AboutLabsController'
+		})
+		.when('/about-labs/1', {
+			templateUrl: 'views/labArticle.html',
+			controller: 'LabArticleController'
 		});
 	$locationProvider.html5Mode(true);
 	
