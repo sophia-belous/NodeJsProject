@@ -1,6 +1,5 @@
 var Animal = require('./models/animal');
-/*var multer = require('multer');
-var fs = require('fs');*/
+var Article = require('./models/article');
 
 var isAuth = function(req, res, next) {
 	if (!req.isAuthenticated())
@@ -30,7 +29,7 @@ module.exports = function(app, passport) {
 	});
 	
 	app.post('/api/uploads', function(req, res) {
-		console.log(req.body);
+		//console.log(req.body);
 		console.log(req.files);
 		var filePaths = [];
 		var fileKeys = Object.keys(req.files);
@@ -105,7 +104,72 @@ module.exports = function(app, passport) {
 		});
 	});
 	
+	app.get('/api/articles', function(req, res) {
+		Article.find(function(err, articles) {
+			if (err)
+				res.send(err);
+				
+			res.json(articles);
+		});
+	});
+	
+	app.post('/api/articles', isAuth, function(req, res) {
+		var article = new Article({
+			title: req.body.title, 
+			date: req.body.date, 
+			shortDesc: req.body.shortDesc, 
+			description: req.body.description, 
+			photo: req.body.photo		
+		});
+		
+		article.save(function(err) {
+			if (err)
+				res.send(err);
+				
+			res.json({message: 'Article Created'});
+		});
+	});
+	
+	app.get('/api/articles/:article_id', function(req, res) {
+		Article.findById(req.params.article_id, function(err, article) {
+			if(err)
+				res.send(err);
+			
+			res.json(article);
+		});
+	});
+	
+	app.put('/api/articles/:article_id', isAuth, function(req, res) {
+		Article.findById(req.params.article_id, function(err, article) {
+			if(err)
+				res.send(err);
+				
+			article.title = req.body.title;
+			article.date = req.body.date;
+			article.shortDesc = req.body.shortDesc; 
+			article.description = req.body.description;			
+			
+			article.save(function(err) {
+			if (err)
+				res.send(err);
+				
+			res.json({message: 'Article Updated'});
+			});
+		});
+	});
+	
+	app.delete('/api/articles/:article_id', function(req, res) {
+		Article.remove({
+			_id: req.params.article_id
+		}, function(err, article) {
+			if(err)
+				res.send(err);
+			
+			res.json({message: 'Successfully Deleted'})
+		});
+	});	
+	
 	app.get('*', function(req, res) {
-	res.sendfile('./public/index.html');
+		res.sendfile('./public/index.html');
 	});
 };

@@ -7,14 +7,13 @@
 		<div ng-repeat="article in articles" class="animal-col col">
 			<div>
 				<a href="#">
-					<img class="img-responsive" ng-src="{{article.photo}}" alt="">
+					<img class="img-responsive" ng-src="{{article.photo[0]}}" alt="">
 				</a>
 			</div>
 			<div>
 				<h5>Title :{{article.title}}</h5>
 				<h6>Description: {{article.shortDesc}}</h6>
-				<!--<a class="btn btn-primary" ng-click="viewDetails(article._id)">More<span class="glyphicon glyphicon-chevron-right"></span></a>-->
-				<a class="btn btn-primary" ng-click="viewDetails(1)">More<span class="glyphicon glyphicon-chevron-right"></span></a>
+				<a class="btn btn-primary" ng-click="viewDetails(article._id)">More<span class="glyphicon glyphicon-chevron-right"></span></a>
 			</div>
 		</div>
 	</div>

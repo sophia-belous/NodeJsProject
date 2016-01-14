@@ -41,24 +41,27 @@ mainModule.controller('DetailsController', function($scope, $routeParams, Animal
 	});
 });
 
-mainModule.controller('AboutLabsController', function($scope, $location) {
+mainModule.controller('AboutLabsController', function($scope, $location, Article) {
 	
 	$scope.pageClass = 'page-about-labs';
 	
-	$scope.articles = [
-		{ title: 'title1', date: '01.13.2016', shortDesc: 'shortDesc1', description: 'description1', photo: '/uploads/stylePhotos/silver-labrador-puppy.jpg' },
-		{ title: 'title2', date: '01.13.2016', shortDesc: 'shortDesc2', description: 'description2', photo: '/uploads/stylePhotos/silver-labrador-puppy.jpg' },
-		{ title: 'title3', date: '01.13.2016', shortDesc: 'shortDesc3', description: 'description3', photo: '/uploads/stylePhotos/silver-labrador-puppy.jpg' }
-	];
+	Article.get(function(res) {
+		$scope.articles = res;
+	});
+	
 	$scope.viewDetails = function(id) {
 		$location.path('/about-labs/' + id);
 	};
 });	
 
-mainModule.controller('LabArticleController', function($scope, $routeParams) {
+mainModule.controller('LabArticleController', function($scope, $routeParams, Article) {
 	
 	$scope.pageClass = 'page-lab-article';
 	
-	$scope.article = { title: 'title1', date: '01.13.2016', shortDesc: 'shortDesc1', description: 'description1', photo: '/uploads/stylePhotos/silver-labrador-puppy.jpg' };
+	Article.getOne($routeParams.article_id, function(res) {
+		$scope.article = res;		
+	});
+	
+	//$scope.article = { title: 'title1', date: '01.13.2016', shortDesc: 'shortDesc1', description: 'description1', photo: ['/uploads/stylePhotos/silver-labrador-puppy.jpg'] };
 
 });

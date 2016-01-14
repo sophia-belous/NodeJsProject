@@ -39,6 +39,20 @@ angular.module('appRoutes', []).config(function($routeProvider, $locationProvide
 				loggedin: checkLoggedin
 			}
 		})
+		.when('/admin/edit-article/:article_id', {
+			templateUrl: 'views/admin/editArticle.html',
+			controller: 'EditController',
+			resolve: {
+				loggedin: checkLoggedin
+			}
+		})
+		.when('/admin/create-article', {
+			templateUrl: 'views/admin/createArticle.html',
+			controller: 'CreateController',
+			resolve: {
+				loggedin: checkLoggedin
+			}
+		})
 		.when('/login', {
 			templateUrl: 'views/login.html',
 			controller: 'LoginController'
@@ -59,7 +73,7 @@ angular.module('appRoutes', []).config(function($routeProvider, $locationProvide
 			templateUrl: 'views/aboutLabs.html',
 			controller: 'AboutLabsController'
 		})
-		.when('/about-labs/1', {
+		.when('/about-labs/:article_id', {
 			templateUrl: 'views/labArticle.html',
 			controller: 'LabArticleController'
 		});
