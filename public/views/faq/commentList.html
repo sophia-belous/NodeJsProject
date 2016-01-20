@@ -1,0 +1,32 @@
+<div ng-repeat="comment in comments">
+	<div>
+		<h5>content :{{comment.content}}</h5>
+		<h6>date: {{comment.date}}</h6>
+		<a ng-click="removeComment(comment._id)" class="btn btn-small btn-danger">delete</a>
+	</div>
+</div>
+<form class="form-horizontal" enctype="multipart/form-data" ng-submit="addComment()">
+	<div class="control-group">			
+		<label for="inputEmail" class="control-label">Email:</label>
+		<div class="controls">
+			<input type="email" id="inputEmail" ng-model="comment.email">
+		</div>
+	</div>
+	<div class="control-group">			
+		<label for="inputName" class="control-label">Name:</label>
+		<div class="controls">
+			<input type="text" id="inputName" ng-model="comment.name">
+		</div>
+	</div>
+	<div class="control-group">			
+		<label for="inputContent" class="control-label">Content:</label>
+		<div class="controls">
+			<input type="text" id="inputContent" ng-model="comment.content">
+		</div>
+	</div>
+	<div class="control-group">
+		<div class="controls">
+			<button type="submit" class="btn btn-primary">Create</button>				
+		</div>
+	</div>
+</form>	

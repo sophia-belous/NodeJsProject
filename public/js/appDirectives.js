@@ -19,3 +19,14 @@ app.directive('myNavScroll', function($window){
 		}
 	};	
 });
+
+app.directive('commentList', function() {
+	return {
+		restrict: 'E',
+		scope: {
+			title: '='
+		},
+		templateUrl: 'views/faq/commentList.html',
+		controller: 'CommentsController'
+	};
+});

@@ -58,3 +58,23 @@ AnimalService.factory('Article', ['$http', function($http) {
 		}
 	};
 }]);
+
+AnimalService.factory('Comment', function($http) {
+	return {
+		get: function(success) {
+			return $http.get('/api/comments').success(success);
+		},
+		
+		create: function(commentData) {
+			return $http.post('/api/comments', commentData);
+		},
+		
+		update: function(id ,commentData) {
+			return $http.put('/api/comments/' + id, commentData);
+		},
+		
+		delete: function(id) {
+			return $http.delete('/api/comments/' + id);
+		}
+	};
+});

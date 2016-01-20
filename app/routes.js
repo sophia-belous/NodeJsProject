@@ -1,5 +1,6 @@
 var Animal = require('./models/animal');
 var Article = require('./models/article');
+var Comment = require('./models/comment');
 
 var isAuth = function(req, res, next) {
 	if (!req.isAuthenticated())
@@ -9,7 +10,7 @@ var isAuth = function(req, res, next) {
 };
 
 module.exports = function(app, passport) {
-	
+	//login
 	app.get('/loggedin', function(req, res) {
 		res.send(req.isAuthenticated() ? req.user : '0');
 	});
@@ -27,10 +28,8 @@ module.exports = function(app, passport) {
 	app.post('/signup', passport.authenticate('signup'), function(req, res) {
 		res.send(req.user);
 	});
-	
+	//files
 	app.post('/api/uploads', function(req, res) {
-		//console.log(req.body);
-		console.log(req.files);
 		var filePaths = [];
 		var fileKeys = Object.keys(req.files);
 
@@ -41,6 +40,7 @@ module.exports = function(app, passport) {
 		res.json(filePaths);
 		
 	});
+	//animals
 	app.get('/api/animals', function(req, res) {
 		Animal.find(function(err, animals) {
 			if (err)
@@ -103,7 +103,7 @@ module.exports = function(app, passport) {
 			res.json({message: 'Successfully Deleted'})
 		});
 	});
-	
+	//articles
 	app.get('/api/articles', function(req, res) {
 		Article.find(function(err, articles) {
 			if (err)
@@ -167,8 +167,73 @@ module.exports = function(app, passport) {
 			
 			res.json({message: 'Successfully Deleted'})
 		});
-	});	
+	});
+	//comments
+	app.get('/api/comments', function(req, res) {
+		Comment.find(function(err, comments) {
+			if (err)
+				res.send(err);
+				
+			res.json(comments);
+		});
+	});
 	
+	app.post('/api/comments', function(req, res) {
+		var comment = new Comment({
+			email: req.body.email, 
+			name: req.body.name, 
+			content: req.body.content, 
+			date: Date.now(), 
+			answer: req.body.answer	
+		});
+		
+		comment.save(function(err) {
+			if (err)
+				res.send(err);
+				
+			res.json({message: 'Comment Created'});
+		});
+	});
+	
+	app.get('/api/comments/:comment_id', function(req, res) {
+		Comment.findById(req.params.comment_id, function(err, comment) {
+			if(err)
+				res.send(err);
+			
+			res.json(comment);
+		});
+	});
+	
+	app.put('/api/comments/:comment_id', function(req, res) {
+		Comment.findById(req.params.comment_id, function(err, comment) {
+			if(err)
+				res.send(err);
+				
+			comment.email = req.body.email;
+			comment.name = req.body.name;
+			comment.content = req.body.content; 
+			comment.date = req.body.date;			
+			
+			comment.save(function(err) {
+			if (err)
+				res.send(err);
+				
+			res.json({message: 'Comment Updated'});
+			});
+		});
+	});
+	
+	app.delete('/api/comments/:comment_id', function(req, res) {
+		Comment.remove({
+			_id: req.params.comment_id
+		}, function(err, comment) {
+			if(err)
+				res.send(err);
+			
+			res.json({message: 'Successfully Deleted'})
+		});
+	});	
+	//index
 	app.get('*', function(req, res) {
 		res.sendfile('./public/index.html');
 	});

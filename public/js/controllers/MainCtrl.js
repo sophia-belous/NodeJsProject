@@ -7,7 +7,7 @@ mainModule.controller('MainController', function($scope) {
 	$scope.myInterval = 5000;
 	$scope.noWrapSlides = false;
 	$scope.slides = [
-		{image:'/uploads/stylePhotos/weimaraner-puppies-adoption-41.jpg', textBig: 'Creatures!', textSmall: 'The Most Gracious', pageLocation: '/pets'},
+		{image:'/uploads/stylePhotos/weimaraner-puppies-adoption-41.jpg', textBig: 'To Me!', textSmall: 'Ask A Question', pageLocation: '/questions'},
 		{image:'/uploads/stylePhotos/26fcbf8c1ba1a263753e20ffd83f0451.jpg', textBig: 'Companion!', textSmall: 'Find Your Best Friend', pageLocation: '/pets'},
 		{image:'/uploads/stylePhotos/silver-labrador-puppy.jpg', textBig: 'Your Dog!', textSmall: 'Get To Know Everything About', pageLocation: '/about-labs'}
 	];
@@ -64,4 +64,35 @@ mainModule.controller('LabArticleController', function($scope, $routeParams, Art
 mainModule.controller('QuestionController', function($scope) {
 	
 	$scope.pageClass = 'page-questions';
+});
+
+mainModule.controller('CommentsController', function($scope, $location, $window, Comment) {
+	
+	$scope.pageClass = 'page-comments';
+	$scope.comment = {};
+	$scope.comments = [];
+	
+	Comment.get(function(res) {
+		$scope.comments = res;
+	});
+	
+	$scope.addComment = function() {		
+		Comment.create($scope.comment);
+		Comment.get(function(res) {
+			$scope.comments = res;
+		});
+		$scope.comment = {};
+	};
+	
+	$scope.removeComment = function(id) {
+		
+		var deleteItem = $window.confirm('Are you sure?');
+		
+		if(deleteItem) {
+			Comment.delete(id);
+			Comment.get(function(res) {
+				$scope.comments = res;
+			});
+		}		
+	};
 });

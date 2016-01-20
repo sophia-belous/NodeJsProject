@@ -42,13 +42,15 @@ section.content.for-nav {
   border: 2px solid #fcc953;
 }
 .content-block {
-  height: 500px;
+  min-height: 500px;
   background-color: #fcc953;
   color: white;
   position: relative;
   text-align: center;
   z-index: 85;
   box-shadow: 0 7px 2px -7px #585858;
+  padding-bottom: 40px;
+  padding-top: 40px;
 }
 .region-before {
   background: url(/uploads/stylePhotos/region-before-yellow.png) center top no-repeat;
@@ -196,11 +198,7 @@ section.content.for-nav {
   position: static;
 }
 
-.page-pets .content-block {
-  padding-bottom: 40px;
-  padding-top: 40px;
-  height: initial; 
-}
+
 .page-pets .content-block img{
   width: 100%; 
 }
@@ -211,11 +209,7 @@ section.content.for-nav {
   margin-bottom: 30px;
 }
 
-.page-about-labs .content-block {
-  padding-bottom: 40px;
-  padding-top: 40px;
-  height: initial; 
-}
+
 .page-about-labs .content-block img{
   width: 70%; 
 }
