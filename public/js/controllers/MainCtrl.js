@@ -1,8 +1,6 @@
-var mainModule = angular.module('MainCtrl', [])
+var mainModule = angular.module('MainCtrl', []);
 
-mainModule.controller('MainController', function($scope) {
-	
-	
+mainModule.controller('MainController', function($scope) {	
 	
 	$scope.pageClass = 'page-home';
 	
@@ -60,8 +58,10 @@ mainModule.controller('LabArticleController', function($scope, $routeParams, Art
 	
 	Article.getOne($routeParams.article_id, function(res) {
 		$scope.article = res;		
-	});
-	
-	//$scope.article = { title: 'title1', date: '01.13.2016', shortDesc: 'shortDesc1', description: 'description1', photo: ['/uploads/stylePhotos/silver-labrador-puppy.jpg'] };
+	});	
+});
 
+mainModule.controller('QuestionController', function($scope) {
+	
+	$scope.pageClass = 'page-questions';
 });

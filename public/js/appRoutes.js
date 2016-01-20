@@ -54,28 +54,32 @@ angular.module('appRoutes', []).config(function($routeProvider, $locationProvide
 			}
 		})
 		.when('/login', {
-			templateUrl: 'views/login.html',
+			templateUrl: 'views/auth/login.html',
 			controller: 'LoginController'
 		})
 		.when('/signup', {
-			templateUrl: 'views/signup.html',
+			templateUrl: 'views/auth/signup.html',
 			controller: 'SignupController'
 		})
 		.when('/pets', {
-			templateUrl: 'views/pets.html',
+			templateUrl: 'views/pets/pets.html',
 			controller: 'PetsController'
 		})
 		.when('/pets/:animal_id', {
-			templateUrl: 'views/petDetails.html',
+			templateUrl: 'views/pets/petDetails.html',
 			controller: 'DetailsController'
 		})
 		.when('/about-labs', {
-			templateUrl: 'views/aboutLabs.html',
+			templateUrl: 'views/labinfo/aboutLabs.html',
 			controller: 'AboutLabsController'
 		})
 		.when('/about-labs/:article_id', {
-			templateUrl: 'views/labArticle.html',
+			templateUrl: 'views/labinfo/labArticle.html',
 			controller: 'LabArticleController'
+		})
+		.when('/questions', {
+			templateUrl: 'views/faq/questions.html',
+			controller: 'QuestionController'
 		});
 	$locationProvider.html5Mode(true);
 	
