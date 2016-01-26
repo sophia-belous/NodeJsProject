@@ -122,3 +122,20 @@ adminModule.controller('CreateController', function($scope, $location, Animal, A
 angular.isUndefinedOrNull = function(val) {
     return angular.isUndefined(val) || val === null 
 }
+
+adminModule.controller('TestController', function($scope, $location, Animal) {
+	$scope.hello = "hello test";
+	$scope.image;
+	$scope.uploadImg = function(photoFile) {
+		Animal.uploadPhoto(photoFile).success(function(uploadResponse) {
+			console.log(uploadResponse);
+			$location.path('/test');
+		}).error(function(error) {
+			console.log(error);
+		});
+	};
+		Animal.getPhoto().success(function(response) {
+			//console.log(response);
+			$scope.image = response;
+		});
+});

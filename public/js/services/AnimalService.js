@@ -31,6 +31,10 @@ AnimalService.factory('Animal', ['$http', function($http) {
 				headers: {'Content-type': undefined},
 				transformRequest: angular.identity
 			});
+		},
+		getPhoto: function() {
+			return $http.get('/api/uploads');
+			
 		}
 	};
 }]);

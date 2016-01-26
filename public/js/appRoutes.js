@@ -1,4 +1,4 @@
-angular.module('appRoutes', []).config(function($routeProvider, $locationProvider, $httpProvider) {
+angular.module('appRoutes', []).config(function($routeProvider, $compileProvider, $locationProvider, $httpProvider) {
 	
 	var checkLoggedin = function($q, $timeout, $http, $location, $rootScope) {
 		var deferred = $q.defer();
@@ -13,6 +13,7 @@ angular.module('appRoutes', []).config(function($routeProvider, $locationProvide
 		});
 		return deferred.promise;
 	};
+	$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|file|ftp|blob):|data:image\//);
 	$routeProvider	
 		.when('/', {
 			templateUrl: 'views/home.html',
@@ -80,6 +81,10 @@ angular.module('appRoutes', []).config(function($routeProvider, $locationProvide
 		.when('/questions', {
 			templateUrl: 'views/faq/questions.html',
 			controller: 'QuestionController'
+		})
+		.when('/test', {
+			templateUrl: 'views/admin/test.html',
+			controller: 'TestController'
 		});
 	$locationProvider.html5Mode(true);
 	

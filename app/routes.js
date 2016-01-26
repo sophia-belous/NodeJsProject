@@ -1,6 +1,9 @@
 var Animal = require('./models/animal');
 var Article = require('./models/article');
 var Comment = require('./models/comment');
+var mongoose = require('mongoose');
+var Grid = require('gridfs-stream');
+var mongodb = mongoose.connection;
 
 var isAuth = function(req, res, next) {
 	if (!req.isAuthenticated())
@@ -29,7 +32,7 @@ module.exports = function(app, passport) {
 		res.send(req.user);
 	});
 	//files
-	app.post('/api/uploads', function(req, res) {
+	/*app.post('/api/uploads', function(req, res) {
 		var filePaths = [];
 		var fileKeys = Object.keys(req.files);
 
@@ -39,6 +42,30 @@ module.exports = function(app, passport) {
 
 		res.json(filePaths);
 		
+	});*/
+	app.post('/api/uploads', function(req, res) {
+		var gfs = Grid(mongodb.db, mongoose.mongo);
+		console.log('update img!');
+		req.pipe(gfs.createWriteStream({
+			filename: 'image1',
+			mode: 'w'
+		}));
+		res.send('Successfilly upload')
+	});
+	app.get('/api/uploads', function(req, res) {
+		var gfs = Grid(mongodb.db, mongoose.mongo);
+		var imageStream = gfs.createReadStream({
+			_id: '56a7518d2fa3283c121a54f2',
+			filename: 'image1',
+			mode: 'r'
+		});
+		imageStream.on('error', function(error) {
+			res.send('404', 'Not found');
+			return;
+		});
+		
+		res.setHeader('Content-Type', 'image');
+		imageStream.pipe(res);
 	});
 	//animals
 	app.get('/api/animals', function(req, res) {

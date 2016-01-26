@@ -8,15 +8,18 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "~1.4.2",
+    "bower": "latest",
     "connect-flash": "^0.1.1",
     "express": "~4.5.1",
     "express-session": "^1.11.3",
+    "gridfs-stream": "^1.1.1",
     "method-override": "~2.0.2",
     "mongoose": "~3.8.0",
     "multer": "^1.1.0",
     "passport": "^0.3.0",
     "passport-local": "^1.0.0",
-    "bower": "latest"
+    "skipper": "^0.5.9",
+    "skipper-gridfs": "^0.5.3"
   },
   "engines": {
     "node": "latest"
