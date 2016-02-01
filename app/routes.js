@@ -55,8 +55,7 @@ module.exports = function(app, passport) {
 	app.get('/api/uploads', function(req, res) {
 		var gfs = Grid(mongodb.db, mongoose.mongo);
 		var imageStream = gfs.createReadStream({
-			_id: '56a7518d2fa3283c121a54f2',
-			filename: 'image1',
+			_id: '56af612ae9871570136270d9',
 			mode: 'r'
 		});
 		imageStream.on('error', function(error) {
@@ -64,7 +63,7 @@ module.exports = function(app, passport) {
 			return;
 		});
 		
-		res.setHeader('Content-Type', 'image');
+		res.setHeader('Content-Type', 'image/png');
 		imageStream.pipe(res);
 	});
 	//animals
@@ -92,6 +91,16 @@ module.exports = function(app, passport) {
 				
 			res.json({message: 'Animal Created'});
 		});
+	});
+	
+	app.post('/picture', function(req, res) {
+		var gfs = Grid(mongodb.db, mongoose.mongo);
+		req.pipe(gfs.createWriteStream({
+			filename: 'test'
+		}).on('close', function(savedFile){
+			console.log('file saved', savedFile);
+			return res.json({file: savedFile});
+		}));
 	});
 	app.get('/api/animals/:animal_id', function(req, res) {
 		Animal.findById(req.params.animal_id, function(err, animal) {

@@ -126,6 +126,11 @@ angular.isUndefinedOrNull = function(val) {
 adminModule.controller('TestController', function($scope, $location, Animal) {
 	$scope.hello = "hello test";
 	$scope.image;
+	Animal.getPhoto().success(function(response) {
+		console.log('dff');
+		console.log(response);
+		$scope.image = response;
+	});
 	$scope.uploadImg = function(photoFile) {
 		Animal.uploadPhoto(photoFile).success(function(uploadResponse) {
 			console.log(uploadResponse);
@@ -134,8 +139,5 @@ adminModule.controller('TestController', function($scope, $location, Animal) {
 			console.log(error);
 		});
 	};
-		Animal.getPhoto().success(function(response) {
-			//console.log(response);
-			$scope.image = response;
-		});
+		
 });
