@@ -18,8 +18,7 @@
     "multer": "^1.1.0",
     "passport": "^0.3.0",
     "passport-local": "^1.0.0",
-    "skipper": "^0.5.9",
-    "skipper-gridfs": "^0.5.3"
+    "shortid": "^2.2.4"
   },
   "engines": {
     "node": "latest"

@@ -13,7 +13,7 @@ angular.module('appRoutes', []).config(function($routeProvider, $compileProvider
 		});
 		return deferred.promise;
 	};
-	$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|file|ftp|blob):|data:image\png/);
+	$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|file|ftp|blob):|data:image\/png/);
 	$routeProvider	
 		.when('/', {
 			templateUrl: 'views/home.html',

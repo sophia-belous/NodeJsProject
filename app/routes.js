@@ -4,6 +4,8 @@ var Comment = require('./models/comment');
 var mongoose = require('mongoose');
 var Grid = require('gridfs-stream');
 var mongodb = mongoose.connection;
+var shortId = require('shortid');
+var fs = require('fs');
 
 var isAuth = function(req, res, next) {
 	if (!req.isAuthenticated())
@@ -45,17 +47,28 @@ module.exports = function(app, passport) {
 	});*/
 	app.post('/api/uploads', function(req, res) {
 		var gfs = Grid(mongodb.db, mongoose.mongo);
-		console.log('update img!');
-		req.pipe(gfs.createWriteStream({
-			filename: 'image1',
-			mode: 'w'
-		}));
-		res.send('Successfilly upload')
+		console.log(req.files);
+		var is;
+		var os;
+		
+		for (var key in req.files) {
+			if (req.files.hasOwnProperty(key)) {
+				var extension = req.files[key].path.split(/[. ]+/).pop();
+				is = fs.createReadStream(req.files[key].path);
+				os = gfs.createWriteStream({ filename: shortId.generate() + '.' + extension, mode: 'w' });
+				is.pipe(os);
+				os.on('close', function(file) {
+					fs.unlink(req.files[key].path, function() {
+						res.json(200, file);
+					});
+				});
+			}
+		}
 	});
 	app.get('/api/uploads', function(req, res) {
 		var gfs = Grid(mongodb.db, mongoose.mongo);
 		var imageStream = gfs.createReadStream({
-			_id: '56af612ae9871570136270d9',
+			_id: '56b0aead2303af3421138061',
 			mode: 'r'
 		});
 		imageStream.on('error', function(error) {
@@ -63,8 +76,15 @@ module.exports = function(app, passport) {
 			return;
 		});
 		
-		res.setHeader('Content-Type', 'image/png');
-		imageStream.pipe(res);
+		var bufs = [];
+		
+		imageStream.on('data', function(chunk) {
+			bufs.push(chunk);		
+		}).on('end', function() {		
+			var fbuf = Buffer.concat(bufs);		
+			var base64 = (fbuf.toString('base64'));		
+			res.send(base64);
+		});
 	});
 	//animals
 	app.get('/api/animals', function(req, res) {

@@ -7,9 +7,8 @@ var passport = require('passport');
 var expressSession = require('express-session');
 var crypto = require('crypto');
 var flash = require('connect-flash');
-/*var multer = require('multer');*/
+var multer = require('multer');
 var fs = require('fs');
-//var Grid = require('gridfs-stream');
 
 var app = express();
 var db = require('./config/db');
@@ -17,8 +16,6 @@ var initPassport = require('./app/passport/init');
 
 var port = process.env.PORT || 8080;
 mongoose.connect(db.url);
-//var mongodb = mongoose.connection;
-//var gfs = Grid(mongodb.db, mongoose.mongo);
 
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
@@ -31,7 +28,7 @@ app.use(expressSession({secret: 'mySecretKey', resave: true, saveUninitialized: 
 app.use(passport.initialize());
 app.use(passport.session());
 
-/*var storage = multer.diskStorage({
+var storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, './public/uploads');
     },
@@ -45,7 +42,7 @@ app.use(passport.session());
 });
 app.use(multer({    
     storage: storage
-}).array('file'));*/
+}).array('file'));
 
 
 app.use(flash());
