@@ -133,7 +133,7 @@ adminModule.controller('TestController', function($scope, $location, Animal) {
 	});
 	$scope.uploadImg = function(file) {
 		Animal.uploadPhoto(file).success(function(uploadResponse) {
-			//console.log(uploadResponse);
+			console.log(uploadResponse);
 			console.log('success');
 			$location.path('/');
 		}).error(function(error) {

@@ -4,7 +4,7 @@ var Comment = require('./models/comment');
 var mongoose = require('mongoose');
 var Grid = require('gridfs-stream');
 var mongodb = mongoose.connection;
-var shortId = require('shortid');
+//var shortId = require('shortid');
 var fs = require('fs');
 
 var isAuth = function(req, res, next) {
@@ -50,20 +50,22 @@ module.exports = function(app, passport) {
 		console.log(req.files);
 		var is;
 		var os;
+		var filenames = [];
+		var fileKeys = Object.keys(req.files);
 		
-		for (var key in req.files) {
-			if (req.files.hasOwnProperty(key)) {
-				var extension = req.files[key].path.split(/[. ]+/).pop();
+		fileKeys.forEach(function(key) {
+			var extension = req.files[key].path.split(/[. ]+/).pop();
 				is = fs.createReadStream(req.files[key].path);
-				os = gfs.createWriteStream({ filename: shortId.generate() + '.' + extension, mode: 'w' });
+				os = gfs.createWriteStream({ filename: req.files[key].filename, mode: 'w' });
 				is.pipe(os);
-				os.on('close', function(file) {
+				filenames.push(req.files[key].filename);
+				os.on('close', function(file) {					
 					fs.unlink(req.files[key].path, function() {
-						res.json(200, file);
+						res.json(200, file);						
 					});
 				});
-			}
-		}
+		});
+		res.json(filenames);
 	});
 	app.get('/api/uploads', function(req, res) {
 		var gfs = Grid(mongodb.db, mongoose.mongo);
