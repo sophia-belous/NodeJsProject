@@ -54,23 +54,23 @@ module.exports = function(app, passport) {
 		var fileKeys = Object.keys(req.files);
 		
 		fileKeys.forEach(function(key) {
-			var extension = req.files[key].path.split(/[. ]+/).pop();
+			//var extension = req.files[key].path.split(/[. ]+/).pop();
 				is = fs.createReadStream(req.files[key].path);
 				os = gfs.createWriteStream({ filename: req.files[key].filename, mode: 'w' });
 				is.pipe(os);
 				filenames.push(req.files[key].filename);
 				os.on('close', function(file) {					
 					fs.unlink(req.files[key].path, function() {
-						res.json(200, file);						
+						res.end(200, file);						
 					});
 				});
 		});
 		res.json(filenames);
 	});
-	app.get('/api/uploads', function(req, res) {
+	app.get('/api/uploads/:name', function(req, res) {
 		var gfs = Grid(mongodb.db, mongoose.mongo);
 		var imageStream = gfs.createReadStream({
-			_id: '56b0aead2303af3421138061',
+			filename: req.params.name,
 			mode: 'r'
 		});
 		imageStream.on('error', function(error) {
@@ -114,16 +114,6 @@ module.exports = function(app, passport) {
 			res.json({message: 'Animal Created'});
 		});
 	});
-	
-	app.post('/picture', function(req, res) {
-		var gfs = Grid(mongodb.db, mongoose.mongo);
-		req.pipe(gfs.createWriteStream({
-			filename: 'test'
-		}).on('close', function(savedFile){
-			console.log('file saved', savedFile);
-			return res.json({file: savedFile});
-		}));
-	});
 	app.get('/api/animals/:animal_id', function(req, res) {
 		Animal.findById(req.params.animal_id, function(err, animal) {
 			if(err)
@@ -166,7 +156,7 @@ module.exports = function(app, passport) {
 		Article.find(function(err, articles) {
 			if (err)
 				res.send(err);
-				
+
 			res.json(articles);
 		});
 	});

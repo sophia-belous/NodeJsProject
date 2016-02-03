@@ -7,7 +7,7 @@
 		<div ng-repeat="article in articles" class="animal-col col">
 			<div>
 				<a href="#">
-					<img class="img-responsive" ng-src="{{article.photo[0]}}" alt="">
+					<img class="img-responsive" ng-src="data:image/jpg;base64, {{article.photo[0]}}" alt="">
 				</a>
 			</div>
 			<div>

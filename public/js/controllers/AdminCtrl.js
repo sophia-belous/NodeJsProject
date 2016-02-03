@@ -124,22 +124,19 @@ angular.isUndefinedOrNull = function(val) {
 }
 
 adminModule.controller('TestController', function($scope, $location, Animal) {
-	$scope.hello = "hello test";
-	$scope.image;
-	Animal.getPhoto().success(function(response) {
-		console.log('dff');
-		//console.log(response);
-		$scope.image = response;
-	});
+	/*$scope.image;
+	
 	$scope.uploadImg = function(file) {
 		Animal.uploadPhoto(file).success(function(uploadResponse) {
-			console.log(uploadResponse);
-			console.log('success');
-			$location.path('/');
+			$scope.image = uploadResponse[0];
+			Animal.getPhoto($scope.image).success(function(response) {
+				console.log(response);
+				$scope.image = response;
+			});
 		}).error(function(error) {
 			console.log(error);
 			console.log('error');
 		});
-	};
+	};*/
 		
 });

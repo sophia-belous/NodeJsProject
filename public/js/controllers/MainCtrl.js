@@ -21,6 +21,12 @@ mainModule.controller('PetsController', function($scope, $location, Animal) {
 	
 	Animal.get(function(res) {
 		$scope.animals = res;
+		angular.forEach($scope.animals, function(value, key) {
+			var element = value;
+			Animal.getPhoto(element.photos[0]).success(function(response) {
+				$scope.animals[key].photos[0] = response;
+			});
+		});
 	});
 	
 	$scope.viewDetails = function(id) {
@@ -35,29 +41,47 @@ mainModule.controller('DetailsController', function($scope, $routeParams, Animal
 	$scope.tagline = 'Details Controller for Pets Page';
 		
 	Animal.getOne($routeParams.animal_id, function(res) {
-		$scope.animal = res;		
+		$scope.animal = res;
+		
+		angular.forEach($scope.animal.photos, function(value, key) {
+			Animal.getPhoto(value).success(function(response) {
+				$scope.animal.photos[key] = response;	
+			});	
+		});				
 	});
 });
 
-mainModule.controller('AboutLabsController', function($scope, $location, Article) {
+mainModule.controller('AboutLabsController', function($scope, $location, Article, Animal) {
 	
 	$scope.pageClass = 'page-about-labs';
 	
-	Article.get(function(res) {
-		$scope.articles = res;
+	Article.get(function(res) {		
+		$scope.articles = res;	
+		angular.forEach($scope.articles, function(value, key) {
+			var element = value;
+			Animal.getPhoto(element.photo[0]).success(function(response) {
+				$scope.articles[key].photo[0] = response;	
+			});	
+		});	
 	});
+	
+	
 	
 	$scope.viewDetails = function(id) {
 		$location.path('/about-labs/' + id);
 	};
 });	
 
-mainModule.controller('LabArticleController', function($scope, $routeParams, Article) {
+mainModule.controller('LabArticleController', function($scope, $routeParams, Article, Animal) {
 	
 	$scope.pageClass = 'page-lab-article';
 	
 	Article.getOne($routeParams.article_id, function(res) {
 		$scope.article = res;		
+
+		Animal.getPhoto($scope.article.photo[0]).success(function(response) {
+			$scope.article.photo[0] = response;	
+		});		
 	});	
 });
 
