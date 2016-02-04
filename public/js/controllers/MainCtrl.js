@@ -1,8 +1,10 @@
 var mainModule = angular.module('MainCtrl', []);
 
-mainModule.controller('MainController', function($scope) {	
+mainModule.controller('MainController', function($scope, Animal) {	
 	
 	$scope.pageClass = 'page-home';
+	$scope.animals= [];
+	$scope.randomAnimal = {};
 	
 	$scope.myInterval = 5000;
 	$scope.noWrapSlides = false;
@@ -11,6 +13,17 @@ mainModule.controller('MainController', function($scope) {
 		{image:'/uploads/stylePhotos/26fcbf8c1ba1a263753e20ffd83f0451.jpg', textBig: 'Companion!', textSmall: 'Find Your Best Friend', pageLocation: '/pets'},
 		{image:'/uploads/stylePhotos/silver-labrador-puppy.jpg', textBig: 'Your Dog!', textSmall: 'Get To Know Everything About', pageLocation: '/about-labs'}
 	];
+	
+	Animal.get(function(res) {
+		if(res.length < 1) return;
+		var animals = res;
+		var index = Math.floor(Math.random() * animals.length)
+		$scope.randomAnimal = animals[index];
+
+		Animal.getPhoto($scope.randomAnimal.photos[0]).success(function(response) {
+			$scope.randomAnimal.photos[0] = response;
+		});
+	});
 });
 
 mainModule.controller('PetsController', function($scope, $location, Animal) {
@@ -108,15 +121,29 @@ mainModule.controller('CommentsController', function($scope, $location, $window,
 		$scope.comment = {};
 	};
 	
-	$scope.removeComment = function(id) {
+	$scope.removeComment = function(id, index) {
 		
 		var deleteItem = $window.confirm('Are you sure?');
 		
 		if(deleteItem) {
 			Comment.delete(id);
-			Comment.get(function(res) {
-				$scope.comments = res;
-			});
+			$scope.comments.splice(index, 1);
 		}		
 	};
+});
+
+mainModule.controller('GalleryController', function($scope, $location, $window, Photo, Animal) {
+	$scope.pageClass = 'page-comments';
+	$scope.photo = {};
+	$scope.photos = [];
+	
+	Photo.get(function(res) {
+		$scope.photos = res;
+		angular.forEach($scope.photos, function(value, key) {
+			var element = value;
+			Animal.getPhoto(element.img).success(function(response) {
+				$scope.photos[key].img = response;	
+			});	
+		});	
+	});	
 });

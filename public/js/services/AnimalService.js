@@ -34,6 +34,10 @@ AnimalService.factory('Animal', ['$http', function($http) {
 		},
 		getPhoto: function(name) {
 			return $http.get('/api/uploads/' + name);			
+		},
+		
+		deletePhoto: function(name) {
+			return $http.delete('/api/uploads/' + name);
 		}
 	};
 }]);
@@ -80,4 +84,28 @@ AnimalService.factory('Comment', function($http) {
 			return $http.delete('/api/comments/' + id);
 		}
 	};
+});
+
+AnimalService.factory('Photo', function($http) {
+	return {
+		get: function(success) {
+			return $http.get('/api/photos').success(success);
+		},
+		
+		create: function(photoData) {
+			return $http.post('/api/photos', photoData);
+		},
+		
+		update: function(id ,photoData) {
+			return $http.put('/api/photos/' + id, photoData);
+		},
+		
+		delete: function(id) {
+			return $http.delete('/api/photos/' + id);
+		},
+		
+		getOne: function(id, success) {
+			return $http.get('/api/photos/' + id).success(success);
+		}
+	};	
 });

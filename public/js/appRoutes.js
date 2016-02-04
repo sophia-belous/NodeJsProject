@@ -54,6 +54,20 @@ angular.module('appRoutes', []).config(function($routeProvider, $compileProvider
 				loggedin: checkLoggedin
 			}
 		})
+		.when('/admin/edit-photo/:photo_id', {
+			templateUrl: 'views/admin/editPhoto.html',
+			controller: 'EditController',
+			resolve: {
+				loggedin: checkLoggedin
+			}
+		})
+		.when('/admin/create-photo', {
+			templateUrl: 'views/admin/createPhoto.html',
+			controller: 'CreateController',
+			resolve: {
+				loggedin: checkLoggedin
+			}
+		})
 		.when('/login', {
 			templateUrl: 'views/auth/login.html',
 			controller: 'LoginController'
@@ -81,6 +95,10 @@ angular.module('appRoutes', []).config(function($routeProvider, $compileProvider
 		.when('/questions', {
 			templateUrl: 'views/faq/questions.html',
 			controller: 'QuestionController'
+		})
+		.when('/gallery', {
+			templateUrl: 'views/gallery/gallery.html',
+			controller: 'GalleryController'
 		})
 		.when('/test', {
 			templateUrl: 'views/admin/test.html',

@@ -2,7 +2,7 @@
 	<div>
 		<h5>content :{{comment.content}}</h5>
 		<h6>date: {{comment.date}}</h6>
-		<a ng-click="removeComment(comment._id)" class="btn btn-small btn-danger">delete</a>
+		<a ng-click="removeComment(comment._id, $index)" class="btn btn-small btn-danger">delete</a>
 	</div>
 </div>
 <form class="form-horizontal" enctype="multipart/form-data" ng-submit="addComment()">

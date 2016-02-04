@@ -1,6 +1,7 @@
 var Animal = require('./models/animal');
 var Article = require('./models/article');
 var Comment = require('./models/comment');
+var Photo = require('./models/photo');
 var mongoose = require('mongoose');
 var Grid = require('gridfs-stream');
 var mongodb = mongoose.connection;
@@ -86,6 +87,73 @@ module.exports = function(app, passport) {
 			var fbuf = Buffer.concat(bufs);		
 			var base64 = (fbuf.toString('base64'));		
 			res.send(base64);
+		});
+	});
+	app.delete('/api/uploads/:name', isAuth, function(req, res) {
+		var gfs = Grid(mongodb.db, mongoose.mongo);
+		gfs.remove({
+			filename: req.params.name
+			}, function (err) {
+				if (err) return handleError(err);
+				
+				console.log('removed success');
+			});
+		});
+	//photos
+	app.get('/api/photos', function(req, res) {
+		Photo.find(function(err, photos) {
+			if (err)
+				res.send(err);
+				
+			res.json(photos);
+		});
+	});
+	app.post('/api/photos', function(req, res) {
+		var photo = new Photo({
+			img: req.body.img,
+			title: req.body.title,
+			text: req.body.text
+		});
+		
+		photo.save(function(err) {
+			if (err)
+				res.send(err);
+			
+			res.json({message: 'Photo Created'});
+		});
+	});
+	app.get('/api/photos/:photo_id', function(req, res) {
+		Photo.findById(req.params.photo_id, function(err, photo) {
+			if(err)
+				res.send(err);
+			
+			res.json(photo);
+		});
+	});
+	app.put('/api/photos/:photo_id', isAuth, function(req, res) {
+		Photo.findById(req.params.photo_id, function(err, photo) {
+			if(err)
+				res.send(err);
+			
+			photo.title = req.body.title;
+			photo.text = req.body.text;
+			
+			photo.save(function(err) {
+			if (err)
+				res.send(err);
+				
+			res.json({message: 'Photo Updated'});
+			});
+		});
+	});
+	app.delete('/api/photos/:photo_id', isAuth, function(req, res) {
+		Photo.remove({
+			_id: req.params.photo_id
+		}, function(err, photo) {
+			if(err)
+				res.send(err);
+			
+			res.json({message: 'Successfully Deleted'})
 		});
 	});
 	//animals
