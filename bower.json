@@ -2,15 +2,14 @@
   "name": "angular",
   "version": "1.0.0",
   "dependencies": {
-    "angular": "latest",
     "angular-route": "latest",
     "angular-bootstrap": "~0.14.3",
     "bootstrap": "latest",
-    "angular-animate": "~1.4.7",
+    "angular-animate": "1.5.0",
     "angular-materialize": "*",
     "angular-file-model": "~0.3.1"
   },
   "resolutions"    : {
-    "angular"  : "1.4.7"
+    "angular"  : "1.5.0"
   }
 }
