@@ -3,7 +3,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "bower install"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -21,7 +21,8 @@
     "shortid": "^2.2.4"
   },
   "engines": {
-    "node": "latest"
+    "node": "4.1.1",
+    "npm": "2.1.x"
   },
   "keywords": [
     "node",
