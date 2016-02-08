@@ -3,7 +3,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "bower cache clean && bower install"
+    "postinstall": "bower install"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -18,7 +18,8 @@
     "multer": "^1.1.0",
     "passport": "^0.3.0",
     "passport-local": "^1.0.0",
-    "shortid": "^2.2.4"
+    "shortid": "^2.2.4",
+    "npm": "latest"
   },
   "engines": {
     "node": "latest"
