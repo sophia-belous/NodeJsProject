@@ -3,7 +3,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "bower install"
+    "postinstall": "bower cache clean && bower install"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
