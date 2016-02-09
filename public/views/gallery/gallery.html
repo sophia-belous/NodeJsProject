@@ -3,19 +3,11 @@
 </div>
 <div class="content-block">
 	<div class="region-before"></div>
-		<div class="row container">
-		<div ng-repeat="photo in photos" class="animal-col col">
-			<div>
-				<a href="#">
-					<img class="img-responsive" style="width: 50%" ng-src="data:image/jpg;base64, {{photo.img}}" alt="">
-				</a>
-			</div>
-			<div>
-				<h5>Title :{{photo.title}}</h5>
-				<h6>Description: {{photo.text}}</h6>
-				<!--<a class="btn btn-primary" ng-click="viewDetails(photo._id)">More<span class="glyphicon glyphicon-chevron-right"></span></a>-->
-			</div>
-		</div>
+	<div class="row container">
+		<a href="#" ng-repeat="photo in photos" class="animal-col col">
+			<img class="img-responsive" style="width: 50%" ng-src="data:image/jpg;base64, {{photo.img}}" alt="">
+			<span><h3>{{photo.title}}</h3><p>{{photo.text}}</p></span>
+		</a>
 	</div>
 	<div class="region-after"></div>	
 </div>

@@ -1,6 +1,7 @@
 var express = require('express');
 var path = require('path');
 var mongoose = require('mongoose');
+var compress = require('compression')
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var passport = require('passport');
@@ -11,6 +12,8 @@ var multer = require('multer');
 var fs = require('fs');
 
 var app = express();
+app.use(compress());
+
 var db = require('./config/db');
 var initPassport = require('./app/passport/init');
 

@@ -2,7 +2,7 @@
 	<div class="slider" slider id="carousel-bg">
 		<ul class="slides">
 			<li ng-repeat="slide in slides">
-				<img ng-src="http:{{ slide.image }}" alt="">
+				<img ng-src="{{ slide.image }}" alt="">
 				<div class="caption center-align">
 					<h5 class="h5-text white-text">{{ slide.textSmall }}</h5>					
 					<h3 class="h3-text white-text">{{ slide.textBig }}</h3>

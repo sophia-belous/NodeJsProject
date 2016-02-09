@@ -133,7 +133,7 @@ mainModule.controller('CommentsController', function($scope, $location, $window,
 });
 
 mainModule.controller('GalleryController', function($scope, $location, $window, Photo, Animal) {
-	$scope.pageClass = 'page-comments';
+	$scope.pageClass = 'page-gallery';
 	$scope.photo = {};
 	$scope.photos = [];
 	
