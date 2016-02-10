@@ -12,16 +12,16 @@ mainModule.controller('MainController', function($scope, Animal) {
 		{image:'/uploads/stylePhotos/weimaraner-puppies-adoption-41.jpg', textBig: 'To Me!', textSmall: 'Ask A Question', pageLocation: '/questions'},
 		{image:'/uploads/stylePhotos/26fcbf8c1ba1a263753e20ffd83f0451.jpg', textBig: 'Companion!', textSmall: 'Find Your Best Friend', pageLocation: '/pets'},
 		{image:'/uploads/stylePhotos/silver-labrador-puppy.jpg', textBig: 'Your Dog!', textSmall: 'Get To Know Everything About', pageLocation: '/about-labs'}
-	];
-	
-	Animal.get(function(res) {
-		if(res.length < 1) return;
+	];    
+    Animal.get(function(res) {
 		var animals = res;
-		var index = Math.floor(Math.random() * animals.length)
-		$scope.randomAnimal = animals[index];
-
-		Animal.getPhoto($scope.randomAnimal.photos[0]).success(function(response) {
-			$scope.randomAnimal.photos[0] = response;
+		angular.forEach(animals, function(value, key) {
+            if(key > 2) return;
+			var element = value;
+            $scope.animals.push(element);
+			Animal.getPhoto(element.photos[0]).success(function(response) {
+				$scope.animals[key].photos[0] = response;
+			});
 		});
 	});
 });

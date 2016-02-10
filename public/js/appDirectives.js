@@ -75,3 +75,13 @@ app.directive('mySmoothScroll', function($window) {
 		}
 	};
 });
+
+app.directive('testDir', function() {
+    return {
+        restrict: 'A',
+        list: function($scope, element, attrs) {
+            
+        }
+    }           
+ 
+});
