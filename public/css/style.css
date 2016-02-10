@@ -2,7 +2,8 @@ html {
 }
 
 body { 
-  font-family: 'Comfortaa', cursive;
+    font-family: 'Comfortaa', cursive;
+    overflow-x: hidden;
 }
 nav {
   height: 80px;
@@ -149,7 +150,7 @@ section.content.for-nav {
   transition: all 500ms ease;
 }
 .navbar-fixed nav {
-  background-color: black;
+  background-color: #242424;
   box-shadow: -1px 5px 0 rgba(0,0,0,0.3);
   margin-top: 0;
 }
