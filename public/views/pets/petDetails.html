@@ -1,17 +1,22 @@
 <div class="parallax-container">
     <div parallax><img ng-src="data:image/jpg;base64, {{animal.photos[0]}}"></div>
 </div>
-<div>
-	<h1>Details Page</h1>
-	<p>{{ tagline }}</p>
-	<p>{{ animal.name }}</p>
-	<p>{{ animal.jender }}</p>
-	<p>{{ animal.color }}</p>
-	<p>{{ animal.description }}</p>
-	<div ng-repeat="photo in animal.photos">
-		<img style="width: 20%; height: 20%;" ng-src="data:image/jpg;base64, {{photo}}" alt="">
+<div class="content-block">
+	<div class="region-before"></div>
+	<div class="container-12">
+		<h1>Details Page</h1>
+		<p>{{ tagline }}</p>
+		<p>{{ animal.name }}</p>
+		<p>{{ animal.jender }}</p>
+		<p>{{ animal.color }}</p>
+		<p>{{ animal.description }}</p>
+		<div class="row">
+			<div ng-repeat="photo in animal.photos"  class="col">
+				<img class="img-responsive" ng-src="data:image/jpg;base64, {{photo}}" alt="">
+			</div>
+		</div>		
 	</div>
-	
+	<div class="region-after"></div>	
 </div>
 <div class="parallax-container">
     <div parallax><img src="/uploads/stylePhotos/weimaraner-puppies-adoption-41.jpg"></div>

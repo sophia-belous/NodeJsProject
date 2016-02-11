@@ -2,22 +2,52 @@ html {
 }
 
 body { 
-    font-family: 'Comfortaa', cursive;
-    overflow-x: hidden;
+  font-family: 'Comfortaa', cursive;
+  min-width:1250px;
+  position:relative;
+}
+
+h2 {
+  font: 400 50px/50px 'Comfortaa', cursive;
+  margin-bottom: 105px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.block-title {
+  margin-bottom: 97px;
+}
+.container-12 {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#page-wrapper {
+	overflow:hidden;
 }
 nav {
-  height: 80px;
-  line-height: 80px;
+  height: 100px;
+  line-height: 100px;
   background-color: transparent;
-  margin-top: 150px;
+  margin-top: 130px;
   box-shadow: none;
 }
-nav .container {
-  width: 85%;
+nav .container-12 {
   z-index: 3;
 }
-.brand-logo img {
-  width: 10%;
+nav .brand-logo {
+  position: absolute;
+  color: #fff;
+  display: inline-block;
+  font-size: 57px;
+  padding: 0;
+  white-space: nowrap;
+}
+#nav-mobile > li{
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 0 15px;
 }
 section.content {
   margin-top: -230px;
@@ -150,7 +180,7 @@ section.content.for-nav {
   transition: all 500ms ease;
 }
 .navbar-fixed nav {
-  background-color: #242424;
+  background-color: #fcc953;
   box-shadow: -1px 5px 0 rgba(0,0,0,0.3);
   margin-top: 0;
 }
@@ -276,6 +306,29 @@ section.content.for-nav {
 .page-home img {
   max-width: 100%;
   display: block;
+  margin-bottom: 30px;
+}
+
+.page-home .cards button {
+  background: none;
+  font-size: x-large;
+  border: 2px solid white;
+  border-radius: 16px;
+  box-shadow: none;
+  color: white;
+  display: inline-block;
+  outline: none;
+  padding: 10px 30px;
+  text-decoration: none;
+  text-transform: none;
+  height: 100%;
+}
+
+.page-home .cards button:hover{
+  border: 2px solid #34363e;
+  background-color: #34363e;
+  color: white;
+  
 }
 
 .page-home .cards {
@@ -300,9 +353,14 @@ section.content.for-nav {
     font-size: 2.2rem;
 }
 .page-home .cards p {
-  color: floralwhite;
+  color: whitesmoke;
   font-size: .8em;
   letter-spacing: 1px;
+}
+
+.page-home .card img {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .page-home .card {
@@ -311,6 +369,7 @@ section.content.for-nav {
   cursor: pointer;
   -webkit-transition: 600ms cubic-bezier(0.77, 0, 0.175, 1);
   transition: 600ms cubic-bezier(0.77, 0, 0.175, 1);
+  background-color: #FCC953;
 }
 .page-home .card:hover {
   box-shadow: 0 -25px 0 -10px rgba(36, 36, 36, 0.5), 0 -50px 0 -20px rgba(36, 36, 36, 0.5), 0 -75px 0 -30px rgba(36, 36, 36, 0.5);

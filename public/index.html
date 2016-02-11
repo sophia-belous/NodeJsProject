@@ -14,30 +14,35 @@
 	
 </head>
 <body ng-app="sampleApp" ng-controller="MainController" my-smooth-scroll>
-	<div data-my-nav-scroll ng-class="{'navbar-fixed':boolChangeClass}">
-		<nav>
-			<div class="nav-wrapper container">
-				<a href="/" class="brand-logo">
-				<img src="http://kevinmroy.com/wp-content/uploads/Pet-Envy.png" alt="">Labs</a>
-				<a class='button-collapse dropdown-button right' href='javascript:void(0);' data-activates='demoDropdown' dropdown data-hover="true">
-    <i class="material-icons">menu</i></a>
-				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li><a href="/pets">Pets</a></li>
-					<li><a href="/login">Login</a></li>
-					<li><a href="/logout" target="_self">Logout</a></li>
-				</ul>
-				<ul id='demoDropdown' class='dropdown-content'>
-					<li><a href="/pets">Pets</a></li>
-					<li><a href="/login">Login</a></li>
-					<li><a href="/logout" target="_self">Logout</a></li>
-				</ul>
-			</div>
-		</nav>
+	<div id="page-wrapper">
+		<div data-my-nav-scroll ng-class="{'navbar-fixed':boolChangeClass}">
+			<nav>
+				<div class="nav-wrapper container-12">
+					<a href="/" class="brand-logo">
+					Labs</a>
+					<a class='button-collapse dropdown-button right' href='javascript:void(0);' data-activates='demoDropdown' dropdown data-hover="true">
+						<i class="material-icons">menu</i>
+					</a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li><a href="/pets">Pets</a></li>
+						<li><a href="/login">Login</a></li>
+						<li><a href="/logout" target="_self">Logout</a></li>
+					</ul>
+					<ul id='demoDropdown' class='dropdown-content'>
+						<li><a href="/pets">Pets</a></li>
+						<li><a href="/login">Login</a></li>
+						<li><a href="/logout" target="_self">Logout</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		
+		<section  data-my-nav-scroll class="content" ng-class="{'for-nav':boolChangeClass}">
+			<div class="page {{ pageClass }}" ng-view></div>		
+		</section>	
+			
 	</div>
 	
-	<section  data-my-nav-scroll class="content" ng-class="{'for-nav':boolChangeClass}">
-		<div class="page {{ pageClass }}" ng-view></div>		
-	</section>	
 	
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
