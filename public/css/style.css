@@ -14,7 +14,7 @@ h2 {
   text-transform: uppercase;
 }
 .block-title {
-  margin-bottom: 97px;
+  margin-bottom: 30px;
 }
 .container-12 {
   position: relative;
@@ -303,15 +303,14 @@ section.content.for-nav {
 .page-home .row.container {
   width: 90%;
 }
-.page-home img {
+/*.page-home img {
   max-width: 100%;
-  display: block;
   margin-bottom: 30px;
 }
 
 .page-home .cards button {
   background: none;
-  font-size: x-large;
+  font-size: large;
   border: 2px solid white;
   border-radius: 16px;
   box-shadow: none;
@@ -378,4 +377,53 @@ section.content.for-nav {
 .page-home .card__content {
   background: #242424;
   padding: 1em 2em;
+}
+
+/*new code*/
+
+.element {
+  height: 270px;
+  width: 270px;
+  border-radius: 50%;
+}
+.element-image {
+  height: 270px;
+  width: 270px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+}
+.element-title {
+  opacity: 0;
+  height: 271px;
+  width: 271px;
+  border-radius: 50%;
+  -moz-transition: .3s ease;
+  -o-transition: .3s ease;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+  background: #fcc953;
+  color: white;
+  font: 400 20px/27px 'Comfortaa', cursive;
+  margin-top: -295px;
+  z-index: 10;
+}
+
+.element:hover .element-title{
+  background-color: #34363e;
+  opacity: 1;
+}
+
+.element-content {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.element-content a {
+  color: inherit;
+  display: table-cell;
+  height: 100%;
+  vertical-align: middle;
 }
