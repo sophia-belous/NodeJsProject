@@ -5,10 +5,11 @@
 				<img ng-src="{{ slide.image }}" alt="">
 				<div class="caption center-align">
 					<h5 class="h5-text white-text">{{ slide.textSmall }}</h5>					
-					<h3 class="h3-text white-text">{{ slide.textBig }}</h3>
-					
+					<h3 class="h3-text white-text">{{ slide.textBig }}</h3>					
 				</div>
-				<a href="{{ slide.pageLocation }}"><button class="waves-effect waves-light btn">Read More</button></a>
+                <div class="center-align">
+				    <a href="{{ slide.pageLocation }}"><button class="waves-effect waves-light btn">Read More</button></a>                                        
+                </div>
 			</li>
 		</ul>		
 	</div>	
@@ -17,39 +18,36 @@
 	<a href="/gallery">
 		<h4 class="h3-text center-align white-text">Gallery</h4>
 		<h5 class="h5-text center-align white-text">of our dogs</h5>
-		<div class="waves-effect waves-light btn fa fa-camera-retro"></div>
+        <div class="center-align">
+            <div class="waves-effect waves-light btn fa fa-camera-retro"></div>
+        </div>
 	</a>	
     <div parallax><img src="/uploads/stylePhotos/black-labrador-dog.jpg"></div>
 </div>
 <div class="content-block">
 	<div class="region-before"></div>
-	<div class="container-12">
-		<h2 class="title block-title">Our dogs</h2>
-		<!--<div class="row" style="padding: 44px 0 85px;">
-			<div class="cards col s12 m4 l4" ng-repeat="animal in animals">
-				<div class="card">
-					<div class="card__content">
-						<h1>Look at this lonely dog</h1>
-						<p>Isn't it a sad dog? He is waiting for you.</p>
-					</div>
-					<img ng-src="data:image/jpg;base64, {{animal.photos[0]}}" alt="" />
-					<a href="#"><button class="waves-effect waves-light btn">Look at him</button></a>	
-				</div>							
-			</div> 
-		</div>
-		<h2 class="title block-title">Or see all</h2>	-->
-		
-		<div class="row">
-			<div class="element col s12 m4 l4" ng-repeat="animal in animals">
-				<div class="element-image waves-effect" ng-style="{ 'background-image': 'url(data:image/jpg;base64,' + animal.photos[0] + ')' }">
-					
-				</div>
-				<div class="element-title btn waves-effect waves-light">
-					<span class="element-content"><a href="#">More info</a></span>
-				</div>
+
+		<!--<h2 class="title block-title">Our dogs</h2>		-->
+		<div class="row container-12">
+			<div class="element col s12 m12 l4" ng-repeat="animal in animals" ng-class="{blockafter:$index == 1 || $index == 2}">
+                <h2 class="title block-title">Stallions</h2>
+                <div class="block-content">
+                    <div class="block-view">
+                        <h6 class="view-title">
+                            <span><a href="#">Mauris fermeum dictum magna</a></span>
+                        </h6>
+                        <div class="view-body">
+                            <span class="view-content">Integer id pharetra velit. Quisque quis ultrices massa, non sollicitudin quam. Proin sit amet neque quis magna vehicula auctor.</span>
+                        </div>
+                    </div>
+                    <div class="element-image waves-effect" ng-style="{ 'background-image': 'url(data:image/jpg;base64,' + animal.photos[0] + ')' }"></div>
+                    <div class="element-title btn waves-effect waves-light">
+                        <span class="element-content"><a href="#">More info</a></span>
+                    </div>
+                </div>				
 			</div>
 		</div>
-	</div>
+
 	<div class="region-after"></div>	
 </div>
 <div id="video">
