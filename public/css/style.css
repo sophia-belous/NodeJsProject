@@ -3,7 +3,7 @@ html {
 
 body { 
   font-family: 'Comfortaa', cursive;
-  min-width:1250px;
+  /*min-width:1250px;*/
   position:relative;
 }
 a {
@@ -23,7 +23,6 @@ h6 {
 
 .container-12 {
   position: relative;
-  width: 1200px;
   margin: 0 auto;
   padding: 0;
 }
@@ -252,30 +251,30 @@ section.content.for-nav {
   max-width: 100%;
 }
 
-#video .video-container {
-  position: relative;
-  z-index: -1;
-  top: 0px;
-  left: 0px;
-  bottom: 0px;
-  right: 0px;
-  overflow: hidden;
-  background-image: url(http://livedemo00.template-help.com/joomla_55403/media/video/video.gif);
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
+.overlay {
+     display: block; width: 100%; height: 100%;
 }
-#video .video-container > video{
-  visibility: visible;
-  margin: auto;
-  position: absolute;
-  z-index: -1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 1350px;
-  height: auto;
+#trailer {
+	position: relative;
+	top: 0; right: 0; bottom: 0; left: 0;
+	overflow: hidden;
+    margin-bottom: -8px;
 }
+#trailer > video {
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /*min-width: 100%; 
+    min-height: 100%;
+    width: auto; height: auto; */
+}
+@media (min-aspect-ratio: 16/9) {
+    #trailer > video { height: 100%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+    #trailer > video { width: 100%; left: -100%; }
+}
+
 .page {
   position: static;
 }
@@ -306,86 +305,7 @@ section.content.for-nav {
 .page-home .row.container {
   width: 90%;
 }
-/*.page-home img {
-  max-width: 100%;
-  margin-bottom: 30px;
-}
 
-.page-home .cards button {
-  background: none;
-  font-size: large;
-  border: 2px solid white;
-  border-radius: 16px;
-  box-shadow: none;
-  color: white;
-  display: inline-block;
-  outline: none;
-  padding: 10px 30px;
-  text-decoration: none;
-  text-transform: none;
-  height: 100%;
-}
-
-.page-home .cards button:hover{
-  border: 2px solid #34363e;
-  background-color: #34363e;
-  color: white;
-  
-}
-
-.page-home .cards {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-.page-home .cards h1 {
-    margin: 0;
-    color: white;
-    letter-spacing: 2px;
-    line-height: 1em;
-    font-size: 2.2rem;
-}
-.page-home .cards p {
-  color: whitesmoke;
-  font-size: .8em;
-  letter-spacing: 1px;
-}
-
-.page-home .card img {
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-.page-home .card {
-  width: 100%;
-  box-shadow: 0 0 0 0 rgba(36, 36, 36, 0.3);
-  cursor: pointer;
-  -webkit-transition: 600ms cubic-bezier(0.77, 0, 0.175, 1);
-  transition: 600ms cubic-bezier(0.77, 0, 0.175, 1);
-  background-color: #FCC953;
-}
-.page-home .card:hover {
-  box-shadow: 0 -25px 0 -10px rgba(36, 36, 36, 0.5), 0 -50px 0 -20px rgba(36, 36, 36, 0.5), 0 -75px 0 -30px rgba(36, 36, 36, 0.5);
-}
-
-.page-home .card__content {
-  background: #242424;
-  padding: 1em 2em;
-}
-
-/*new code*/
-
-.element {
-}
 .element-image {
   height: 270px;
   width: 270px;
@@ -439,7 +359,7 @@ section.content.for-nav {
     display: block;
     position: absolute;
     top: 0;
-    width: 2px;
+    width: 1px;
 }
 
 .block-title {
