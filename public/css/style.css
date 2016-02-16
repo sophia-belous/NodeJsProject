@@ -96,7 +96,7 @@ section.content.for-nav {
     left:50%;
     margin-left:-206px;
     position:absolute;
-    top:-77px;
+    top:-76px;
     width:412px;
     z-index:90;
 }
@@ -368,4 +368,16 @@ section.content.for-nav {
 
 .block-view {
   margin-bottom: 30px;
+}
+
+.view-content {
+  font-size: 13px;
+}
+
+.view-title {
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
+    display: block;
 }
