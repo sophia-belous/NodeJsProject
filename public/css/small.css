@@ -71,3 +71,36 @@
 #carousel-bg .slides {
     height: 700px !important;
 }
+.element-title {
+    margin-left: -274px;
+    margin-top: 0;
+}
+
+.video-text {
+    padding: 100px 10px 100px;
+    /*margin: 0 10px;*/
+}
+
+.video-text .block-title {
+    font-size: 45px;
+    line-height: 45px;
+    margin-bottom: 0;
+}
+
+.video-text .btn {
+    width: auto;
+    font-size: x-large;
+    padding: 25px;
+}
+
+.footer.parallax-container {
+    height: 100%;
+}
+
+.footer .parallax img {
+    max-width: 700%;
+}
+
+.footer-text {
+  margin-top: 0;
+}

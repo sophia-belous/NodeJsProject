@@ -1,9 +1,5 @@
-html {
-}
-
 body { 
   font-family: 'Comfortaa', cursive;
-  /*min-width:1250px;*/
   position:relative;
 }
 a {
@@ -24,7 +20,7 @@ h6 {
 .container-12 {
   position: relative;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 40px;
 }
 
 #page-wrapper {
@@ -71,6 +67,10 @@ section.content.for-nav {
   background-color: transparent;
   border: 2px solid;
 } 
+
+.gallary-block.parallax-container {
+    background: rgba(68,68,68,0.5);
+}
 .gallary-block a:hover .btn{
   background-color: #fcc953;
   border: 2px solid #fcc953;
@@ -255,31 +255,72 @@ section.content.for-nav {
      display: block; width: 100%; height: 100%;
 }
 #trailer {
-	position: relative;
-	top: 0; right: 0; bottom: 0; left: 0;
-	overflow: hidden;
-    margin-bottom: -8px;
+  position: relative;
+  top: 0; right: 0; bottom: 0; left: 0;
+  overflow: hidden;
+  margin-bottom: -8px;
 }
 #trailer > video {
     top: 0;
     left: 0;
     z-index: -1;
     /*min-width: 100%; 
-    min-height: 100%;
-    width: auto; height: auto; */
+    min-height: 100%;*/
+    /*width: auto; height: auto;*/
 }
-@media (min-aspect-ratio: 16/9) {
+/*@media (min-aspect-ratio: 16/9) {
     #trailer > video { height: 100%; top: -100%; }
 }
 @media (max-aspect-ratio: 16/9) {
     #trailer > video { width: 100%; left: -100%; }
+}*/
+
+.video-text {
+  color: white;
+  position:absolute;
+  z-index: 1; 
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;   
+  padding: 150px 100px 200px;
+  background: rgba(68,68,68,0.6);
+}
+
+.text-about {
+  text-align: center;
+}
+
+.video-text .block-title {
+  font-size: 110px;
+  letter-spacing: -1px;
+  line-height: 105px;
+  margin-bottom: 88px;
+}
+
+.video-text .block-title:hover {
+  color:#fcc953;
+  cursor: pointer;
+}
+
+.video-text .btn {
+  height: 100%;
+  border-radius: 30px;
+  font-size: xx-large;
+  text-transform: none;
+  border: 2px solid white;
+  background-color: transparent;
+  padding: 35px;
+}
+
+.video-text .btn:hover{
+  border: 2px solid transparent;
+  background-color: #fcc953;
 }
 
 .page {
   position: static;
 }
-
-
 .page-pets .content-block img{
   width: 100%; 
 }
@@ -300,8 +341,6 @@ section.content.for-nav {
 .page-about-labs .animal-col {
   margin-bottom: 30px;
 }
-.page-login {}
-
 .page-home .row.container {
   width: 90%;
 }
@@ -331,7 +370,7 @@ section.content.for-nav {
 }
 
 .element:hover .element-title{
-  background-color: #34363e;
+  background-color: rgba(52,54,62,0.9);
   opacity: 1;
 }
 
@@ -380,4 +419,124 @@ section.content.for-nav {
 }
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
     display: block;
+}
+
+/*.footer .parallax {
+  bottom: -150px;
+}*/
+
+.footer .content-block {
+  background: none;
+  text-align: left;
+  background: rgba(90, 90, 90, 0.5);
+  height: 100%;
+}
+
+.footer .block-title {
+  font-size: 30px;
+  line-height: 36px;
+  margin-bottom: 53px;
+  text-align: left;
+}
+
+.footer-content p {
+  margin-bottom: 15px;
+}
+
+.footer-content .highlighted {
+  color: #fcc953;
+  font: 400 34px/40px 'Comfortaa', cursive;  
+}
+.footer-block.flickr-block li.flickr-item {
+  background: none;
+  float: left;
+  height: 85px;
+  margin: 0 6px 6px 0;
+  padding: 0;
+  width: 85px;  
+}
+
+.footer-block.flickr-block li.flickr-item img:hover {
+  opacity: .5;
+}
+
+.footer-block.flickr-block li.flickr-item img{
+  -moz-transition: .3s ease;
+  -o-transition: .3s ease;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+  width: 100%;
+  height: auto;
+}
+
+.footer-text {
+  margin-top: 70px;
+}
+.footer-text-bottom {
+  padding: 127px 60px;
+}
+.footer.parallax-container {
+  height: auto;
+}
+
+.footer .parallax img {
+  max-width: 130%;
+}
+
+span.fl-wrapper {
+  display: block;
+  float: left;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.follow-block .fl-wrapper a {
+  background: #fcc953;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  height: 49px;
+  line-height: 49px;
+  text-align: center;
+  width: 49px;
+}
+
+a.follow-link {
+    display: inline-block;
+}
+
+a.follow-link:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: none;
+}
+
+a.fl-facebook:before {
+    content: "\f09a";
+}
+
+a.fl-googleplus:before {
+    content: "\f0d5";
+}
+
+a.fl-twitter:before {
+    content: "\f099";
+}
+a.fl-pinterest:before {
+    content: "\f0d2";
+}
+a.fl-linkedin:before {
+    content: "\f0e1";
+}
+a.fl-instagram:before {
+    content: "\f16d";
+}
+
+.copyright-block {
+  margin-bottom: 10px;
 }
