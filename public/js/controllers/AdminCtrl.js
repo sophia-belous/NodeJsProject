@@ -1,7 +1,7 @@
 var adminModule = angular.module('AdminCtrl', []);
 
 adminModule.controller('AdminController', function($scope, Animal, Article, Photo, $location, $window) {
-	
+	angular.element('.main-parallax').removeClass("display-none");
 	$scope.pageClass = 'page-admin';
 	
 	$scope.tagline = 'Admin Controller for Admin Page';	
@@ -93,7 +93,7 @@ adminModule.controller('AdminController', function($scope, Animal, Article, Phot
 });
 
 adminModule.controller('EditController', function($scope, $routeParams, $location, Animal, Article, Photo) {
-	
+	angular.element('.main-parallax').removeClass("display-none");
 	$scope.pageClass = 'page-admin-edit';
 	
 	if(!angular.isUndefinedOrNull($routeParams.animal_id)) {
@@ -131,7 +131,7 @@ adminModule.controller('EditController', function($scope, $routeParams, $locatio
 });
 
 adminModule.controller('CreateController', function($scope, $location, Animal, Article, Photo) {
-	
+	angular.element('.main-parallax').removeClass("display-none");
 	$scope.pageClass = 'page-admin-create';
 	
 	$scope.animal = {};

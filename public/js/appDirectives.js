@@ -8,7 +8,7 @@ app.directive('myNavScroll', function($window){
 				if (!$scope.scrollPosition) {
 					$scope.scrollPosition = 0;
 				}
-				if (this.pageYOffset > 130) {
+				if (this.pageYOffset > 100) {
 					$scope.boolChangeClass = true;
 				} else {
 					$scope.boolChangeClass = false;

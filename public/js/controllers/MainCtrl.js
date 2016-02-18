@@ -1,6 +1,7 @@
 var mainModule = angular.module('MainCtrl', []);
 
-mainModule.controller('MainController', function($scope, Animal) {	
+mainModule.controller('MainController', function($scope, Animal) {
+	angular.element('.main-parallax').addClass("display-none");
 	
 	$scope.pageClass = 'page-home';
 	$scope.animals= [];
@@ -27,6 +28,7 @@ mainModule.controller('MainController', function($scope, Animal) {
 });
 
 mainModule.controller('PetsController', function($scope, $location, Animal) {
+	angular.element('.main-parallax').removeClass("display-none");
 	
 	$scope.pageClass = 'page-pets';
 
@@ -48,6 +50,7 @@ mainModule.controller('PetsController', function($scope, $location, Animal) {
 });
 
 mainModule.controller('DetailsController', function($scope, $routeParams, Animal) {
+	angular.element('.main-parallax').addClass("display-none");
 	
 	$scope.pageClass = 'page-pet-details';
 	
@@ -65,6 +68,8 @@ mainModule.controller('DetailsController', function($scope, $routeParams, Animal
 });
 
 mainModule.controller('AboutLabsController', function($scope, $location, Article, Animal) {
+	angular.element('.main-parallax').removeClass("display-none");
+	
 	
 	$scope.pageClass = 'page-about-labs';
 	
@@ -86,6 +91,7 @@ mainModule.controller('AboutLabsController', function($scope, $location, Article
 });	
 
 mainModule.controller('LabArticleController', function($scope, $routeParams, Article, Animal) {
+	angular.element('.main-parallax').addClass("display-none");
 	
 	$scope.pageClass = 'page-lab-article';
 	
@@ -99,6 +105,7 @@ mainModule.controller('LabArticleController', function($scope, $routeParams, Art
 });
 
 mainModule.controller('QuestionController', function($scope) {
+	angular.element('.main-parallax').removeClass("display-none");
 	
 	$scope.pageClass = 'page-questions';
 });
@@ -133,6 +140,7 @@ mainModule.controller('CommentsController', function($scope, $location, $window,
 });
 
 mainModule.controller('GalleryController', function($scope, $location, $window, Photo, Animal) {
+	angular.element('.main-parallax').removeClass("display-none");
 	$scope.pageClass = 'page-gallery';
 	$scope.photo = {};
 	$scope.photos = [];

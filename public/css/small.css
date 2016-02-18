@@ -109,3 +109,12 @@
 .footer-text {
   margin-top: 0;
 }
+
+video {
+    width: auto;
+}
+
+.page-pets .content-block {
+  min-height: 400px;  
+}
+

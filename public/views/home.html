@@ -1,18 +1,18 @@
 <header>
-	<div class="slider" slider id="carousel-bg">
-		<ul class="slides">
-			<li ng-repeat="slide in slides">
-				<img ng-src="{{ slide.image }}" alt="">
-				<div class="caption center-align">
-					<h5 class="h5-text white-text">{{ slide.textSmall }}</h5>					
-					<h3 class="h3-text white-text">{{ slide.textBig }}</h3>					
-				</div>
-                <div class="center-align">
-				    <a href="{{ slide.pageLocation }}"><button class="waves-effect waves-light btn">Read More</button></a>                                        
+    <div class="slider" slider id="carousel-bg">
+        <ul class="slides">
+            <li ng-repeat="slide in slides">
+                <img ng-src="{{ slide.image }}" alt="">
+                <div class="caption center-align">
+                    <h5 class="h5-text white-text">{{ slide.textSmall }}</h5>					
+                    <h3 class="h3-text white-text">{{ slide.textBig }}</h3>					
                 </div>
-			</li>
-		</ul>		
-	</div>	
+                <div class="caption-button center-align">
+                    <a href="{{ slide.pageLocation }}"><button class="waves-effect waves-light btn">Read More</button></a>                                        
+                </div>
+            </li>
+        </ul>		
+    </div>	
 </header>
 <div class="gallary-block parallax-container">
 	<a href="/gallery">
@@ -47,11 +47,12 @@
                 </div>				
 			</div>
 		</div>
+            <button class="btn all-pets waves-effect waves-light"><a href="#">See all pets</a></button>
 
 	<div class="region-after"></div>	
 </div>
 <div id="trailer" class="overlay">		
-    <video  id="video" width="auto" height="100%" autoplay poster="/uploads/stylePhotos/sad-black-dog-full-hd-wallpaper-images-new-best-desktop-background-download-free.jpg" loop muted>
+    <video  id="video" width="100%" height="100%" autoplay poster="/uploads/stylePhotos/sad-black-dog-full-hd-wallpaper-images-new-best-desktop-background-download-free.jpg" loop muted>
         <source src="/uploads/stylePhotos/Labrador.mp4" type="video/mp4">
     </video>
     <div class="video-text">
@@ -115,11 +116,11 @@
             <div class="col s12 m12 l6 follow-block">
                 <div class="content block-content">
                     <div class="follow-links">
-                        <span class="fl-wrapper"><a href="#" class="follow-link fl-facebook waves-effect waves-light"></a></span>
-                        <span class="fl-wrapper"><a href="#" class="follow-link fl-googleplus waves-effect waves-light"></a></span>
-                        <span class="fl-wrapper"><a href="#" class="follow-link fl-twitter waves-effect waves-light"></a></span>
-                        <span class="fl-wrapper"><a href="#" class="follow-link fl-pinterest waves-effect waves-light"></a></span>
-                        <span class="fl-wrapper"><a href="#" class="follow-link fl-linkedin waves-effect waves-light"></a></span>
+                        <span class="fl-wrapper"><a href="https://www.facebook.com/sharer/sharer.php" class="follow-link fl-facebook waves-effect waves-light"></a></span>
+                        <span class="fl-wrapper"><a href="https://plus.google.com/share?url=dry-dusk-1869.herokuapp.com" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="follow-link fl-googleplus waves-effect waves-light"></a></span>
+                        <span class="fl-wrapper"><a href="https://twitter.com/share?via=sophiadev&related=twitterapi%2Ctwitter&hashtags=labradors%2Cbuy&text=Лабрадоры%20в%20Бресте" class="follow-link fl-twitter waves-effect waves-light"></a></span>
+                        <span class="fl-wrapper"><a href="https://pinterest.com/pin/create/button/?url=https%3A//s3.amazonaws.com/upload.screenshot.co/89f498649d&media=https%3A//s3.amazonaws.com/upload.screenshot.co/89f498649d&description=ssss" class="follow-link fl-pinterest waves-effect waves-light"></a></span>
+                        <span class="fl-wrapper"><a href="https://www.linkedin.com/shareArticle?mini=true&title=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B0%20%D0%BB%D0%B0%D0%B1%D1%80%D0%B0%D0%B4%D0%BE%D1%80%D0%BE%D0%B2&summary=%D0%9F%D1%80%D0%B8%D0%BE%D0%B1%D1%80%D0%B5%D1%82%D0%B8%20%D0%B4%D1%80%D1%83%D0%B3%D0%B0&source=" class="follow-link fl-linkedin waves-effect waves-light"></a></span>
                         <span class="fl-wrapper"><a href="#" class="follow-link fl-instagram waves-effect waves-light"></a></span>
                     </div>   
                 </div>
