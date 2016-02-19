@@ -1,13 +1,16 @@
 <!--<div class="parallax-container">
     <div parallax><img src="/uploads/stylePhotos/weimaraner-puppies-adoption-41.jpg"></div>
 </div>-->
-<div class="content-block">
-	<div class="region-before"></div>
-	<div class="row container">
-		<a href="#" ng-repeat="photo in photos" class="animal-col col">
-			<img class="img-responsive" style="width: 50%" ng-src="data:image/jpg;base64, {{photo.img}}" alt="">
-			<span><h3>{{photo.title}}</h3><p>{{photo.text}}</p></span>
-		</a>
+<div class="content-block white">
+	<div class="main-before"></div>
+	<div class="container">
+		<h2 class="title block-title">Gallery</h2>
+		<div class="row">
+			<div class="material-placeholder animal-col s4 m4 l4 col" ng-repeat="photo in photos">
+				<img class="materialboxed responsive-img" materialboxed data-caption="{{photo.text}}" ng-src="data:image/jpg;base64, {{photo.img}}" alt="">
+			</div>
+		</div>
+		
 	</div>
-	<div class="region-after"></div>	
+	<div class="main-after"></div>	
 </div>

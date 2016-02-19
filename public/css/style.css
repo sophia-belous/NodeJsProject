@@ -81,14 +81,14 @@ section.content.for-nav {
   color: white;
   position: relative;
   text-align: center;
-  z-index: 85;
+  /*z-index: 85;*/
   box-shadow: 0 7px 2px -7px #585858;
   padding-bottom: 40px;
   padding-top: 40px;
 }
 .content-block.white {
   background-color: white;
-  color: black;
+  color: #34363e;
 }
 .region-before {
     background: url(/uploads/stylePhotos/region-before-yellow.png) center top no-repeat;
@@ -567,6 +567,3 @@ a.fl-instagram:before {
 .main-parallax {
   height: 370px;
 }
-
-
-    
