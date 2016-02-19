@@ -567,3 +567,23 @@ a.fl-instagram:before {
 .main-parallax {
   height: 370px;
 }
+
+
+
+img.gallery-img.materialboxed.responsive-img {
+  object-fit: cover;
+  height: 200px;
+}
+
+img.gallery-img.materialboxed.responsive-img.active {
+  width: auto !important;
+  
+}
+
+.materialboxed:hover:not(.active) {
+  opacity: 1;
+}
+
+.materialboxed:hover {
+    will-change: unset;
+}
