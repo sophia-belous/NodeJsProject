@@ -322,13 +322,30 @@ section.content.for-nav {
   position: static;
 }
 .page-pets .content-block img{
-  width: 100%; 
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
 }
 .page-pets .row.container {
   width: 90%;
 }
 .page-pets .animal-col {
   margin-bottom: 30px;
+}
+
+.page-pets .btn {
+    height: 100%;
+    border-radius: 20px;
+    font-size: x-large;
+    text-transform: none;
+    border: 2px solid white;
+    background-color: transparent;
+    padding: 10px 35px;
+}
+
+.page-pets .btn:hover{
+  border: 2px solid transparent;
+  background-color: #fcc953;
 }
 
 
@@ -473,7 +490,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   margin-top: 70px;
 }
 .footer-text-bottom {
-  padding: 127px 60px;
+  padding: 60px 60px;
 }
 .footer.parallax-container {
   height: auto;
@@ -568,16 +585,15 @@ a.fl-instagram:before {
   height: 370px;
 }
 
-
-
 img.gallery-img.materialboxed.responsive-img {
+  -o-object-fit: cover;
   object-fit: cover;
   height: 200px;
+  
 }
 
-img.gallery-img.materialboxed.responsive-img.active {
-  width: auto !important;
-  
+.gallery-row.row .col {
+    padding: 0;
 }
 
 .materialboxed:hover:not(.active) {

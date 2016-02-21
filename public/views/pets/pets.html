@@ -1,16 +1,16 @@
 <div class="content-block">
 	<div class="region-before"></div>
 	<div class="row container-12">
-		<div ng-repeat="animal in animals" class="animal-col col s4 m4 l4">
+		<div ng-repeat="animal in animals" class="animal-col col s12 m12 l4">
 			<div>
 				<a href="#">
-					<img class="img-responsive" ng-src="data:image/jpg;base64, {{animal.photos[0]}}" alt="">
+					<img class="img-responsive circle" ng-src="data:image/jpg;base64, {{animal.photos[0]}}" alt="">
 				</a>
 			</div>
 			<div>
 				<h5>Name :{{animal.name}}</h5>
 				<h6>Jender: {{animal.jender}}</h6>
-				<a class="btn btn-primary" ng-click="viewDetails(animal._id)">More<span class="glyphicon glyphicon-chevron-right"></span></a>
+				<a class="btn waves-effect waves-light" ng-click="viewDetails(animal._id)">More<span class="glyphicon glyphicon-chevron-right"></span></a>
 			</div>
 		</div>
 	</div>
