@@ -118,3 +118,12 @@ video {
   min-height: 400px;  
 }
 
+.article-image img {
+    height: 350px !important;
+    width: 350px !important;
+}
+
+.pet-content, .article-content {
+  text-align: center;
+}
+

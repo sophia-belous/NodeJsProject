@@ -1,18 +1,23 @@
-<div class="content-block">
-	<div class="region-before"></div>
+<div class="content-block white">
+	<div class="main-before"></div>
 	<div class="row container-12">
-		<div ng-repeat="animal in animals" class="animal-col col s12 m12 l4">
-			<div>
-				<a href="#">
-					<img class="img-responsive circle" ng-src="data:image/jpg;base64, {{animal.photos[0]}}" alt="">
-				</a>
-			</div>
-			<div>
-				<h5>Name :{{animal.name}}</h5>
-				<h6>Jender: {{animal.jender}}</h6>
-				<a class="btn waves-effect waves-light" ng-click="viewDetails(animal._id)">More<span class="glyphicon glyphicon-chevron-right"></span></a>
+		<h2 class="title block-title">Our pets</h2>
+		<div class="animal-row row">
+			<div ng-repeat="animal in animals track by $index" class="animal-col col s12 m12 l6">
+				<div class="animal-image col  s12 m12 l6">
+					<a href="#">
+						<img class="waves-effect waves-light img-responsive circle" ng-src="data:image/jpg;base64, {{animal.photos[0]}}" alt="">
+					</a>
+				</div>
+				<div class="animal-caption col s12 m12 l6">
+					<h5>{{animal.name}}</h5>
+					<h6>{{animal.jender}}</h6>
+					<h6>{{animal.color}}</h6>
+					<a class="btn waves-effect waves-light" ng-click="viewDetails(animal._id)">More<span class="glyphicon glyphicon-chevron-right"></span></a>
+				</div>
 			</div>
 		</div>
+		
 	</div>
-	<div class="region-after"></div>	
+	<div class="main-after"></div>	
 </div>

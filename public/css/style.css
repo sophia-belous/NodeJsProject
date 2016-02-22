@@ -2,9 +2,15 @@ body {
   font-family: 'Comfortaa', cursive;
   position:relative;
 }
-a {
+.page-home a {
     color: white;
 }
+
+.footer a {
+    color: white;
+}
+
+
 
 h2 {
   font: 400 50px/50px 'Comfortaa', cursive;
@@ -15,6 +21,12 @@ h2 {
 
 h6 {
     font: 500 18px/27px 'Ubuntu', sans-serif;
+}
+
+h5 {
+    color: #34363e;
+    font: 500 20px/27px 'Ubuntu', sans-serif;
+    margin-bottom: 28px;
 }
 
 .container-12 {
@@ -324,7 +336,9 @@ section.content.for-nav {
 .page-pets .content-block img{
     width: 300px;
     height: 300px;
+    -o-object-fit: cover;
     object-fit: cover;
+    background-image: url('/uploads/stylePhotos/suit-puppy.jpg');
 }
 .page-pets .row.container {
   width: 90%;
@@ -335,22 +349,19 @@ section.content.for-nav {
 
 .page-pets .btn {
     height: 100%;
-    border-radius: 20px;
-    font-size: x-large;
+    border-radius: 25px;
+    font-size: xx-large;
     text-transform: none;
-    border: 2px solid white;
+    border: 2px solid #34363E;
     background-color: transparent;
-    padding: 10px 35px;
+    padding: 15px 60px;
+    color: #34363E;
 }
 
 .page-pets .btn:hover{
   border: 2px solid transparent;
   background-color: #fcc953;
-}
-
-
-.page-about-labs .content-block img{
-  width: 70%; 
+  color: white;
 }
 .page-about-labs .row.container {
   width: 90%;
@@ -602,4 +613,101 @@ img.gallery-img.materialboxed.responsive-img {
 
 .materialboxed:hover {
     will-change: unset;
+}
+
+ul#mobile-demo.side-nav.active {
+  overflow-y: hidden;
+  left: 0 !important;
+  width: 240px !important;
+  height: calc(100% + 90px);
+}
+
+.pet-content, .article-content {
+  text-align: left;
+}
+.pet-image {
+    padding: 0 !important;
+}
+
+.pet-images > img, .article-image img{
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.page-pet-details .btn {
+    height: 100%;
+    border-radius: 25px;
+    font-size: xx-large;
+    text-transform: none;
+    border: 2px solid #34363E;
+    background-color: transparent;
+    padding: 35px;
+    color: #34363E;
+}
+
+.page-pet-details .btn:hover{
+  border: 2px solid transparent;
+  background-color: #fcc953;
+  color: white;
+}
+
+.content-block.white .btn > a {
+  color: #34363e;
+}
+
+.content-block.white .btn:hover > a {
+  color: white;
+}
+
+ .article-image img {
+   height: 500px !important;
+   width: 500px !important;
+ }
+ 
+ .page-about-labs .btn {
+    height: 100%;
+    border-radius: 20px;
+    font-size: x-large;
+    text-transform: none;
+    border: 2px solid #34363E;
+    background-color: transparent;
+    padding: 10px 35px;
+    color: #34363E;
+}
+
+.page-about-labs .btn:hover{
+  border: 2px solid transparent;
+  background-color: #fcc953;
+  color: white;
+}
+
+.node-title {
+    margin-bottom: 0;
+}
+
+.node-submitted {
+    border-bottom: 1px solid #d8d9da;
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0;
+    padding-bottom: 15px;
+}
+
+.article-content {
+  margin-bottom: 35px;
+}
+
+.article-node-text {
+  color: #737479;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  line-height: 27px;
+  font-size: 15px;
+}
+
+.page-lab-article .container-12 {
+  margin-top:100px;
+}
+.pet-btn-div {
+  text-align: center;
 }

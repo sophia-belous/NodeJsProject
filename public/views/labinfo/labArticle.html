@@ -1,18 +1,17 @@
 <div class="parallax-container">
     <div parallax><img ng-src="data:image/jpg;base64, {{article.photo[0]}}"></div>
 </div>
-<div>
-	
+<div>	
 </div>
-<div class="content-block">
-	<div class="region-before"></div>
+<div class="content-block white">
+	<div class="main-before"></div>
 	<div class="container-12">
-		<h1>Details Page</h1>
-	
-		<p>{{ article.title }}</p>
-		<p>{{ article.date }}</p>
-		<p>{{ article.description }}</p>	
-		
+		<h2>{{ article.title }}</h2>
+		<div class="submitted node-submitted" role="contentinfo">
+			<span class="node-author">Submitted by <span class="username">admin</span></span>
+			<span class="node-time">on <time datetime="{{article.date}}">{{ article.date.substring(0,10) }}</time></span>
+		</div>
+		<p class="article-node-text">{{ article.description }}</p>		
 	</div>
-	<div class="region-after"></div>	
+	<div class="main-after"></div>	
 </div>

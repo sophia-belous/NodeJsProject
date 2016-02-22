@@ -12,18 +12,20 @@
 		<div data-my-nav-scroll ng-class="{'navbar-fixed':boolChangeClass}">
 			<nav>
 				<div class="nav-wrapper container-12">
-					<a href="/" class="brand-logo">
-					Labs</a>
-					<a class='button-collapse dropdown-button right' href='javascript:void(0);' data-activates='demoDropdown' dropdown data-hover="true">
-						<i class="material-icons">menu</i>
-					</a>
-					<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<a href="/" class="brand-logo">Labs</a>
+					<a href='javascript:void(0);' dropdown class='button-collapse full hide-on-large-only' data-activates='mobile-demo'>
+						<i class="material-icons">menu</i></a>
+					<ul class="right hide-on-med-and-down">
 						<li><a href="/pets">Pets</a></li>
+                        <li><a href="/about-labs">Blog</a></li>
+                        <li><a href="/questions">Faq</a></li>
 						<li><a href="/login">Login</a></li>
 						<li><a href="/logout" target="_self">Logout</a></li>
 					</ul>
-					<ul id='demoDropdown' class='dropdown-content'>
+					<ul id='mobile-demo' class='side-nav' style="width: 240px !important;">
 						<li><a href="/pets">Pets</a></li>
+                        <li><a href="/about-labs">Blog</a></li>
+                        <li><a href="/questions">Faq</a></li>
 						<li><a href="/login">Login</a></li>
 						<li><a href="/logout" target="_self">Logout</a></li>
 					</ul>

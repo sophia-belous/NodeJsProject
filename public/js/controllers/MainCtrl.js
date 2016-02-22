@@ -50,7 +50,7 @@ mainModule.controller('PetsController', function($scope, $location, Animal) {
 });
 
 mainModule.controller('DetailsController', function($scope, $routeParams, Animal) {
-	angular.element('.main-parallax').addClass("display-none");
+	angular.element('.main-parallax').removeClass("display-none");
 	
 	$scope.pageClass = 'page-pet-details';
 	

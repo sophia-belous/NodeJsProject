@@ -1,21 +1,22 @@
-<div class="parallax-container">
-    <div parallax><img src="/uploads/stylePhotos/weimaraner-puppies-adoption-41.jpg"></div>
-</div>
-<div class="content-block">
-	<div class="region-before"></div>
+<div class="content-block white">
+	<div class="main-before"></div>
 	<div class="row container-12">
-		<div ng-repeat="article in articles" class="animal-col col">
-			<div>
-				<a href="#">
-					<img class="img-responsive" ng-src="data:image/jpg;base64, {{article.photo[0]}}" alt="">
+		<div ng-repeat="article in articles" class="animal-col col s12 m12 l12 row">
+			<div class="article-image col s12 m12 l6">
+				<a ng-click="viewDetails(article._id)">
+					<img class="waves-effect waves-light circle responsive-img" width="500px" height="500px" ng-src="data:image/jpg;base64, {{article.photo[0]}}" alt="">
 				</a>
 			</div>
-			<div>
-				<h5>Title :{{article.title}}</h5>
-				<h6>Description: {{article.shortDesc}}</h6>
-				<a class="btn btn-primary" ng-click="viewDetails(article._id)">More<span class="glyphicon glyphicon-chevron-right"></span></a>
+			<div class="article-content col s12 m12 l6">
+				<h5 class="node-title waves-effect waves-light" ng-click="viewDetails(article._id)">{{article.title}}</h5>
+				<div class="submitted node-submitted" role="contentinfo">
+					<span class="node-author">Submitted by <span class="username">admin</span></span>
+					<span class="node-time">on <time datetime="{{article.date}}">{{ article.date.substring(0,10) }}</time></span>
+				</div>
+				<p class="article-node-text">{{article.shortDesc}}</p>
+				<a class="btn waves-effect waves-light" ng-click="viewDetails(article._id)">More<span class="glyphicon glyphicon-chevron-right"></span></a>
 			</div>
 		</div>
 	</div>
-	<div class="region-after"></div>	
+	<div class="man-after"></div>	
 </div>

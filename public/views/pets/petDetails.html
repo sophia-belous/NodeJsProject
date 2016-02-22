@@ -1,20 +1,29 @@
-<div class="parallax-container">
-    <div parallax><img ng-src="data:image/jpg;base64, {{animal.photos[0]}}"></div>
-</div>
-<div class="content-block">
-	<div class="region-before"></div>
+<div class="content-block white">
+	<div class="main-before"></div>
 	<div class="container-12">
-		<h1>Details Page</h1>
-		<p>{{ tagline }}</p>
-		<p>{{ animal.name }}</p>
-		<p>{{ animal.jender }}</p>
-		<p>{{ animal.color }}</p>
-		<p>{{ animal.description }}</p>
-		<div class="row">
-			<div ng-repeat="photo in animal.photos"  class="col">
-				<img class="img-responsive" ng-src="data:image/jpg;base64, {{photo}}" alt="">
-			</div>
-		</div>		
+		<h2 class="title block-title">This is {{ animal.name }}</h2>
+		<div class="pet-row row">
+			<div class="pet-image-wrapper col s12 n12 l6">
+				<div class="pet-first-image material-placeholder">
+					<img class="materialboxed responsive-img" materialboxed ng-src="data:image/jpg;base64,{{animal.photos[0]}}" alt="">
+				</div>
+				<div class="pet-images row">
+					<div ng-repeat="photo in animal.photos"  class="material-placeholder pet-image col s12 m12 l6" ng-if="$index > 0">
+						<img class="materialboxed responsive-img" materialboxed ng-src="data:image/jpg;base64,{{photo}}" alt="">
+					</div>
+				</div>
+			</div>	
+			<div class="pet-content col s12 n12 l6">			
+				<h6 class="view-title">{{ animal.name }}</h6>
+				<h6 class="view-title">{{ animal.jender }}</h6>
+				<h6 class="view-title">{{ animal.color }}</h6>
+				<p class="article-node-text  center">{{ animal.description }}</p>
+				<div class="pet-btn-div">
+					<button class="center btn waves-effect waves-light"><a href="/pets">See all pets</a></button>
+					
+				</div>
+			</div>			
+		</div>
 	</div>
-	<div class="region-after"></div>	
+	<div class="main-after"></div>	
 </div>
