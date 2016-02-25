@@ -2,13 +2,7 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        ngAnnotate: {
-            app: {
-                files: {
-                    'public/js/build/production.js': ['public/js/build/production.js']
-                }
-            }
-        },
+        
         concat: {
             dist: {
                 src: [
@@ -22,6 +16,13 @@ module.exports = function(grunt) {
                     'public/js/app.js',
                 ],
                 dest: 'public/js/build/production.js',
+            }
+        },
+        ngAnnotate: {
+            app: {
+                files: {
+                    'public/js/build/production.js': ['public/js/build/production.js']
+                }
             }
         },
         uglify: {
