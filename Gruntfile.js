@@ -34,6 +34,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-ng-annotate');    
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.registerTask('heroku', ['concat', 'ngAnnotate', 'uglify']);
+    grunt.registerTask('default', ['concat', 'ngAnnotate', 'uglify']);
 
 };	
