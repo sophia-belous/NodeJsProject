@@ -99,10 +99,6 @@ angular.module('appRoutes', []).config(function($routeProvider, $compileProvider
 		.when('/gallery', {
 			templateUrl: 'views/gallery/gallery.html',
 			controller: 'GalleryController'
-		})
-		.when('/test', {
-			templateUrl: 'views/admin/test.html',
-			controller: 'TestController'
 		});
 	$locationProvider.html5Mode(true);
 	

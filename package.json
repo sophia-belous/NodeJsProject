@@ -3,7 +3,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "bower cache clean && bower install"
+    "postinstall": "bower install; grunt"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -14,16 +14,26 @@
     "express": "~4.5.1",
     "express-session": "^1.11.3",
     "gridfs-stream": "^1.1.1",
+    "grunt": ">=0.4",
+    "grunt-cli": ">= 0.1.6",
     "method-override": "~2.0.2",
     "mongoose": "~3.8.0",
     "multer": "^1.1.0",
     "passport": "^0.3.0",
     "passport-local": "^1.0.0",
-    "shortid": "^2.2.4"
+    "shortid": "^2.2.4",
+    "time-grunt": "^1.3.0"
   },
   "engines": {
     "node": "4.1.1",
     "npm": "2.1.x"
+  },
+  "devDependencies": {    
+    "grunt-contrib-concat": ">=0.1.3",
+    "grunt-contrib-cssmin": ">=0.5.0",
+    "grunt-contrib-uglify": ">=0.2.0",
+    "grunt-contrib-watch": "~0.3.1",
+    "grunt-ng-annotate": "^1.0.1"
   },
   "keywords": [
     "node",

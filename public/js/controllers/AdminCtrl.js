@@ -175,22 +175,4 @@ adminModule.controller('CreateController', function($scope, $location, Animal, A
 
 angular.isUndefinedOrNull = function(val) {
     return angular.isUndefined(val) || val === null 
-}
-
-adminModule.controller('TestController', function($scope, $location, Animal) {
-	/*$scope.image;
-	
-	$scope.uploadImg = function(file) {
-		Animal.uploadPhoto(file).success(function(uploadResponse) {
-			$scope.image = uploadResponse[0];
-			Animal.getPhoto($scope.image).success(function(response) {
-				console.log(response);
-				$scope.image = response;
-			});
-		}).error(function(error) {
-			console.log(error);
-			console.log('error');
-		});
-	};*/
-		
-});
+};
