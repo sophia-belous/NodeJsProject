@@ -3,7 +3,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "bower install; grunt"
+    "postinstall": "bower install; grunt build"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
